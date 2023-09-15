@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgqyh3anx1foc"]
+
+[ext_resource type="Shader" path="res://assets/shaders/postfx/gb_shader.gdshader" id="1_arfl7"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_tnfc5"]
+[ext_resource type="PackedScene" uid="uid://iuphverfkkxq" path="res://scenes/ui/main_menu.tscn" id="2_4nl4q"]
+[ext_resource type="Texture2D" uid="uid://dlb4bdqx0qb7e" path="res://assets/textures/postfx/bayer_pattern.png" id="2_5stho"]
+[ext_resource type="PackedScene" uid="uid://by20yi3la5260" path="res://scenes/levels/level_one.tscn" id="3_gkmad"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r1fiw"]
+resource_name = "gb_colouriser_mat"
+render_priority = 0
+shader = ExtResource("1_arfl7")
+shader_parameter/dither_amount = 0.0
+shader_parameter/brightness = 1.0
+shader_parameter/contrast = 1.0
+shader_parameter/saturation = 1.0
+shader_parameter/pallette = PackedVector3Array(237, 242, 206, 166, 214, 179, 90, 130, 152, 34, 39, 91)
+shader_parameter/bayer_texture = ExtResource("2_5stho")
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_tnfc5")
+main_menu = ExtResource("2_4nl4q")
+levels = Array[PackedScene]([ExtResource("3_gkmad")])
+
+[node name="postfx" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="gb_colouriser" type="ColorRect" parent="postfx"]
+material = SubResource("ShaderMaterial_r1fiw")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
