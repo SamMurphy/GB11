@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4oj43uvdy5cb"]
+
+[ext_resource type="Texture2D" uid="uid://cxo6h6h4epvls" path="res://assets/textures/REPLACE_ME/Furniture/WallTileset.png" id="1_hu8a1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sgg1t"]
+resource_name = "furniture_world_texture"
+texture = ExtResource("1_hu8a1")
+0:0/0 = 0
+0:2/0 = 0
+2:2/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qiqey"]
+sources/0 = SubResource("TileSetAtlasSource_sgg1t")
+
+[node name="furniture_level_one" type="Node2D"]
+
+[node name="WorldMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_qiqey")
+format = 2
+layer_0/tile_data = PackedInt32Array(2, 131072, 0, 1, 0, 0, 0, 0, 0, 3, 0, 0, 4, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 5, 131072, 0)
