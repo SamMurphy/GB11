@@ -1,0 +1,6 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bxkghsplgb5t"]
+
+[ext_resource type="FontFile" uid="uid://i2j4rgkrw7xr" path="res://assets/fonts/AtariGames.ttf" id="1_aiywe"]
+
+[resource]
+font = ExtResource("1_aiywe")

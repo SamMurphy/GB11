@@ -17,6 +17,10 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://assets/textures/jam_logo.png"
 config/icon="res://assets/textures/jam_logo.png"
 
+[autoload]
+
+GameGlobals="*res://scripts/GameGlobals.gd"
+
 [display]
 
 window/size/viewport_width=160

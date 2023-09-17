@@ -1,0 +1,109 @@
+[gd_scene load_steps=4 format=3 uid="uid://8hboys7x1r2u"]
+
+[ext_resource type="Script" path="res://scripts/UI/score_screen.gd" id="1_8u27x"]
+[ext_resource type="LabelSettings" uid="uid://bxkghsplgb5t" path="res://assets/labelsetting.tres" id="2_vyrtk"]
+[ext_resource type="PackedScene" uid="uid://babfgmqbih0pv" path="res://scenes/objects/bg.tscn" id="3_tfi1g"]
+
+[node name="Level2D" type="Node2D" node_paths=PackedStringArray("characters", "score_lbl")]
+script = ExtResource("1_8u27x")
+characters = [NodePath("enter_your_name/name/first_lbl"), NodePath("enter_your_name/name/second_lbl"), NodePath("enter_your_name/name/third_lbl")]
+score_lbl = NodePath("score/score_lbl")
+
+[node name="enter_your_name" type="Node2D" parent="."]
+position = Vector2(0, -40)
+
+[node name="title" type="Label" parent="enter_your_name"]
+offset_left = 2.0
+offset_top = 58.0
+offset_right = 162.0
+offset_bottom = 81.0
+text = "ENTER YOUR NAME"
+label_settings = ExtResource("2_vyrtk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="name" type="Node2D" parent="enter_your_name"]
+position = Vector2(80, 88)
+
+[node name="first_lbl" type="Label" parent="enter_your_name/name"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = -8.5
+offset_right = -4.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "S"
+label_settings = ExtResource("2_vyrtk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="second_lbl" type="Label" parent="enter_your_name/name"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -8.5
+offset_right = 4.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "S"
+label_settings = ExtResource("2_vyrtk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="third_lbl" type="Label" parent="enter_your_name/name"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -8.5
+offset_right = 12.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "S"
+label_settings = ExtResource("2_vyrtk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="score" type="Node2D" parent="."]
+position = Vector2(80, 104)
+
+[node name="title" type="Label" parent="score"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.5
+offset_top = -11.5
+offset_right = 38.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOU SCORED"
+label_settings = ExtResource("2_vyrtk")
+
+[node name="score_lbl" type="Label" parent="score"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_right = 22.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2.3232"
+label_settings = ExtResource("2_vyrtk")
+
+[node name="BG" parent="." instance=ExtResource("3_tfi1g")]
+
+[node name="SendScoreRequest" type="HTTPRequest" parent="."]
