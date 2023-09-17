@@ -11,8 +11,10 @@ position_label = NodePath("position_lbl")
 time_label = NodePath("time_lbl")
 
 [node name="ScoresRequest" type="HTTPRequest" parent="."]
+timeout = 10.0
 
 [node name="PositionRequest" type="HTTPRequest" parent="."]
+timeout = 10.0
 
 [node name="highscores_lbl" type="Label" parent="."]
 offset_top = 21.0

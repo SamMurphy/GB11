@@ -55,7 +55,9 @@ func send_score():
 	var name = ""
 	for character in characters:
 		name += character.text
-	var score_data = name + '&' + str(GameGlobals.Score)
+	var format_score = "%.3f"
+	var score_string = format_score % [GameGlobals.Score]
+	var score_data = name + '&' + score_string
 	$SendScoreRequest.request_completed.connect(_on_request_completed)
 	var headers = ["User-Agent: GodotEngine", "Access-Control-Allow-Origin: '*'", "Content-type: text/plain"]
 	$SendScoreRequest.request("https://bananafacts.co.uk:5232/setscorepls", headers, HTTPClient.METHOD_POST, score_data)

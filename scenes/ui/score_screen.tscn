@@ -107,3 +107,4 @@ label_settings = ExtResource("2_vyrtk")
 [node name="BG" parent="." instance=ExtResource("3_tfi1g")]
 
 [node name="SendScoreRequest" type="HTTPRequest" parent="."]
+timeout = 10.0
