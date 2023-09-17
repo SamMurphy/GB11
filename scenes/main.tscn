@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgqyh3anx1foc"]
+[gd_scene load_steps=5 format=3 uid="uid://dgqyh3anx1foc"]
 
 [ext_resource type="Shader" path="res://assets/shaders/postfx/gb_shader.gdshader" id="1_arfl7"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tnfc5"]
-[ext_resource type="PackedScene" uid="uid://iuphverfkkxq" path="res://scenes/ui/main_menu.tscn" id="2_4nl4q"]
 [ext_resource type="Texture2D" uid="uid://dlb4bdqx0qb7e" path="res://assets/textures/postfx/bayer_pattern.png" id="2_5stho"]
-[ext_resource type="PackedScene" uid="uid://c4oj43uvdy5cb" path="res://scenes/levels/FurnitureLevel/furniture_level_one.tscn" id="3_r7bxg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r1fiw"]
 resource_name = "gb_colouriser_mat"
@@ -19,8 +17,8 @@ shader_parameter/bayer_texture = ExtResource("2_5stho")
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_tnfc5")
-main_menu = ExtResource("2_4nl4q")
-levels = Array[PackedScene]([ExtResource("3_r7bxg")])
+main_menu_path = "res://scenes/ui/main_menu.tscn"
+level_paths = Array[String](["res://scenes/levels/level_example.tscn", "res://scenes/ui/score_screen.tscn", "res://scenes/ui/highscore_screen.tscn"])
 
 [node name="postfx" type="CanvasLayer" parent="."]
 layer = 10

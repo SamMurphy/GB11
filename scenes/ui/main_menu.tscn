@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://iuphverfkkxq"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_3duqm"]
+[ext_resource type="Script" path="res://scripts/UI/main_menu.gd" id="1_3duqm"]
 [ext_resource type="FontFile" uid="uid://i2j4rgkrw7xr" path="res://assets/fonts/AtariGames.ttf" id="1_4o5vo"]
-[ext_resource type="Script" path="res://scripts/main_menu_animation.gd" id="1_s0b5a"]
+[ext_resource type="Script" path="res://scripts/UI/main_menu_animation.gd" id="1_s0b5a"]
 [ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="2_c06wn"]
-[ext_resource type="PackedScene" uid="uid://babfgmqbih0pv" path="res://scenes/bg.tscn" id="2_hpmuq"]
+[ext_resource type="PackedScene" uid="uid://babfgmqbih0pv" path="res://scenes/objects/bg.tscn" id="2_hpmuq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s60oj"]
 font = ExtResource("1_4o5vo")

@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf8keu0p6vo4w"]
+
+[ext_resource type="Script" path="res://scripts/UI/highscore_screen.gd" id="1_hfhd5"]
+[ext_resource type="LabelSettings" uid="uid://bxkghsplgb5t" path="res://assets/labelsetting.tres" id="2_vkdu0"]
+[ext_resource type="PackedScene" uid="uid://babfgmqbih0pv" path="res://scenes/objects/bg.tscn" id="3_mgcbk"]
+
+[node name="highscore_screen" type="Node2D" node_paths=PackedStringArray("scores_label", "position_label", "time_label")]
+script = ExtResource("1_hfhd5")
+scores_label = NodePath("highscores_lbl")
+position_label = NodePath("position_lbl")
+time_label = NodePath("time_lbl")
+
+[node name="ScoresRequest" type="HTTPRequest" parent="."]
+timeout = 10.0
+
+[node name="PositionRequest" type="HTTPRequest" parent="."]
+timeout = 10.0
+
+[node name="highscores_lbl" type="Label" parent="."]
+offset_top = 21.0
+offset_right = 160.0
+offset_bottom = 107.0
+text = "SCORES"
+label_settings = ExtResource("2_vkdu0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="title_lbl" type="Label" parent="."]
+offset_right = 160.0
+offset_bottom = 23.0
+text = "HIGH SCORES"
+label_settings = ExtResource("2_vkdu0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="position_lbl" type="Label" parent="."]
+offset_top = 101.0
+offset_right = 160.0
+offset_bottom = 124.0
+text = "You finished Xth!"
+label_settings = ExtResource("2_vkdu0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="time_lbl" type="Label" parent="."]
+offset_top = 121.0
+offset_right = 160.0
+offset_bottom = 144.0
+text = "2.32 seconds"
+label_settings = ExtResource("2_vkdu0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BG" parent="." instance=ExtResource("3_mgcbk")]

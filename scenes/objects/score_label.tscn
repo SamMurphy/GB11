@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dagtnxlvaa3f0"]
+
+[ext_resource type="Script" path="res://scripts/objects/score_label.gd" id="1_puxos"]
+[ext_resource type="LabelSettings" uid="uid://bxkghsplgb5t" path="res://assets/labelsetting.tres" id="2_qc21q"]
+
+[node name="score_label" type="Node2D"]
+script = ExtResource("1_puxos")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 42.0
+offset_bottom = 23.0
+text = "TIME: "
+label_settings = ExtResource("2_qc21q")
