@@ -31,7 +31,7 @@ offset_bottom = -0.000274658
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_46e46")
-text_speed = 0.5
+text_speed = 0.1
 
 [node name="FurnitureName" type="RichTextLabel" parent="BoxOfWords"]
 layout_mode = 0
@@ -55,3 +55,10 @@ bbcode_enabled = true
 text = "This is some furniture"
 
 [node name="Timer" type="Timer" parent="BoxOfWords"]
+
+[node name="Divider" type="ColorRect" parent="BoxOfWords"]
+layout_mode = 0
+offset_top = 9.0
+offset_right = 120.0
+offset_bottom = 9.5
+color = Color(0, 0, 0, 1)
