@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://jrp1qntu3rqt"]
+
+[ext_resource type="FontFile" uid="uid://cnu1tkdwio1mo" path="res://assets/fonts/sixty-fore-mour.ttf" id="1_nh66v"]
+
+[node name="DialogueInteraction" type="Control"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -44.0
+offset_right = 59.9999
+offset_bottom = -8.99973
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BoxOfWords" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -35.0003
+offset_right = 60.0
+offset_bottom = -0.000274658
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(1, 1, 1, 0.454902)
+
+[node name="FurnitureName" type="RichTextLabel" parent="BoxOfWords"]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 10.0
+theme_override_fonts/normal_font = ExtResource("1_nh66v")
+theme_override_font_sizes/normal_font_size = 8
+text = "Djunkelskog"
+
+[node name="FurnitureDescription" type="RichTextLabel" parent="BoxOfWords"]
+offset_top = 10.0
+offset_right = 120.0
+offset_bottom = 35.0
+theme_override_fonts/normal_font = ExtResource("1_nh66v")
+theme_override_font_sizes/normal_font_size = 8
+text = "This is some furniture"
