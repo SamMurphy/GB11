@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://jrp1qntu3rqt"]
+[gd_scene load_steps=3 format=3 uid="uid://jrp1qntu3rqt"]
 
+[ext_resource type="Script" path="res://scenes/ui/BoxOfWords.gd" id="1_46e46"]
 [ext_resource type="FontFile" uid="uid://cnu1tkdwio1mo" path="res://assets/fonts/sixty-fore-mour.ttf" id="1_nh66v"]
 
 [node name="DialogueInteraction" type="Control"]
@@ -29,20 +30,28 @@ offset_right = 60.0
 offset_bottom = -0.000274658
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(1, 1, 1, 0.454902)
+script = ExtResource("1_46e46")
+text_speed = 0.5
 
 [node name="FurnitureName" type="RichTextLabel" parent="BoxOfWords"]
 layout_mode = 0
 offset_right = 120.0
 offset_bottom = 10.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("1_nh66v")
 theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
 text = "Djunkelskog"
 
 [node name="FurnitureDescription" type="RichTextLabel" parent="BoxOfWords"]
+layout_mode = 0
 offset_top = 10.0
 offset_right = 120.0
 offset_bottom = 35.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("1_nh66v")
 theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
 text = "This is some furniture"
+
+[node name="Timer" type="Timer" parent="BoxOfWords"]
