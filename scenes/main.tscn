@@ -18,7 +18,7 @@ shader_parameter/bayer_texture = ExtResource("2_5stho")
 [node name="main" type="Node2D"]
 script = ExtResource("1_tnfc5")
 main_menu_path = "res://scenes/ui/main_menu.tscn"
-level_paths = Array[String](["res://scenes/levels/level_example.tscn", "res://scenes/ui/score_screen.tscn", "res://scenes/ui/highscore_screen.tscn"])
+level_paths = Array[String](["res://scenes/levels/FurnitureLevel/furniture_level_one.tscn", "res://scenes/ui/score_screen.tscn", "res://scenes/ui/highscore_screen.tscn"])
 
 [node name="postfx" type="CanvasLayer" parent="."]
 layer = 10

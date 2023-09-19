@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://gujot7nulkea"]
+[gd_scene load_steps=26 format=3 uid="uid://gujot7nulkea"]
 
 [ext_resource type="Script" path="res://scripts/player/furniture_player.gd" id="1_eyiih"]
 [ext_resource type="Texture2D" uid="uid://ul3jih626pjm" path="res://assets/textures/REPLACE_ME/player-idle.png" id="2_hqtsd"]
 [ext_resource type="Texture2D" uid="uid://cfvqmdob2f10m" path="res://assets/textures/REPLACE_ME/player-jump.png" id="3_vpow1"]
 [ext_resource type="Texture2D" uid="uid://dt844ni4c3d0u" path="res://assets/textures/REPLACE_ME/payer-run.png" id="4_syegj"]
+[ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="5_b01ky"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rf27l"]
 size = Vector2(16, 16)
@@ -281,3 +282,6 @@ frame = 2
 libraries = {
 "": SubResource("AnimationLibrary_f5ok6")
 }
+
+[node name="Movement" type="Node" parent="."]
+script = ExtResource("5_b01ky")
