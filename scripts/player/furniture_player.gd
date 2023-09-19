@@ -10,7 +10,6 @@ var movement
 func _ready():
 	anim.play("idle")
 	movement = get_node("Movement")
-	movement._setup(self)
 
 func _physics_process(delta):
 	
