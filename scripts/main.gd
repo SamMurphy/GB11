@@ -32,21 +32,29 @@ func load_level(level_index : int):
 		return
 		
 	if current_level:
-		current_level.level_started.disconnect(level_started)
-		current_level.level_complete.disconnect(level_complete)
+		disconnect_signals(current_level)
 		current_level.queue_free()
 
 	current_level_index = level_index
 	if current_level_index < level_paths.size():
 		var new_packed_scene = ResourceLoader.load(level_paths[current_level_index])
 		current_level = new_packed_scene.instantiate()
-		current_level.level_started.connect(level_started)
-		current_level.level_complete.connect(level_complete)
+		connect_signals(current_level)
 		add_child(current_level)
 	else:
 		current_level = null
 		current_level_index = -1
 		load_main_menu()
+		
+func connect_signals(level : Node):
+	level.level_started.connect(level_started)
+	level.level_complete.connect(level_complete)
+	level.level_restart.connect(reload_level)
+	
+func disconnect_signals(level : Node):
+	level.level_started.disconnect(level_started)
+	level.level_complete.disconnect(level_complete)
+	level.level_restart.disconnect(reload_level)
 
 func load_next_level():
 	load_level(current_level_index + 1)
@@ -56,3 +64,6 @@ func level_started():
 	
 func level_complete():
 	load_next_level()
+	
+func reload_level():
+	load_level(current_level_index)
