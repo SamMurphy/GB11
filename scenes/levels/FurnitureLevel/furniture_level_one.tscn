@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4oj43uvdy5cb"]
+[gd_scene load_steps=7 format=3 uid="uid://c4oj43uvdy5cb"]
 
 [ext_resource type="Script" path="res://scripts/levels/furniture_level_one.gd" id="1_g8ckv"]
 [ext_resource type="Texture2D" uid="uid://cxo6h6h4epvls" path="res://assets/textures/REPLACE_ME/Furniture/WallTileset.png" id="1_hu8a1"]
