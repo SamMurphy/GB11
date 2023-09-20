@@ -11,7 +11,7 @@ func _ready():
 	$Timer.wait_time = text_speed as float
 	hideAll()
 	# for debug purposes, will be called by specific furniture item which will give it name and desc
-	sayDialogue("Hi", "More than 10 letters I think, here are some more letters we shall see")
+	sayDialogue("Djunkelskog", "This is a nice bear shaped object, also shaped like friend!")
 
 func hideAll():
 	$FurnitureName.hide()
