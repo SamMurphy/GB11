@@ -4,6 +4,8 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var movement
 
+var currentFurniture : Node2D
+
 @onready var anim = get_node("AnimationPlayer")
 
 
@@ -15,6 +17,12 @@ func _physics_process(delta):
 	
 	var xDirection = Input.get_axis("DPad_left", "DPad_right")
 	var yDirection = Input.get_axis("DPad_up", "DPad_down")
+	
+	if Input.is_action_pressed("A") && is_instance_valid(currentFurniture):
+		currentFurniture._push(Vector2(xDirection, yDirection))
+		
+	if Input.is_action_just_pressed("B") && is_instance_valid(currentFurniture):
+		currentFurniture._rotate()
 		
 	if xDirection:
 		if xDirection == -1:
@@ -29,7 +37,23 @@ func _physics_process(delta):
 		else:
 			movement._move_down()
 	
-	if velocity.x || velocity.y:
-		anim.play("run")
+	if velocity.x < 0:
+		anim.play("walk_left")
+	elif velocity.x > 0:
+		anim.play("walk_right")
+	elif velocity.y < 0:
+		anim.play("walk_down")
+	elif velocity.y > 0:
+		anim.play("walk_up")
 	else:
 		anim.play("idle")
+
+
+func _on_object_detector_entered(body):
+	if body.is_in_group("furniture"):
+		currentFurniture = body
+
+func _on_object_detector_exited(body):
+	if is_instance_valid(currentFurniture):
+		if body == currentFurniture:
+			currentFurniture = null

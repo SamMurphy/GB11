@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4oj43uvdy5cb"]
+[gd_scene load_steps=8 format=3 uid="uid://c4oj43uvdy5cb"]
 
 [ext_resource type="Script" path="res://scripts/levels/furniture_level_one.gd" id="1_g8ckv"]
 [ext_resource type="Texture2D" uid="uid://cxo6h6h4epvls" path="res://assets/textures/REPLACE_ME/Furniture/WallTileset.png" id="1_hu8a1"]
 [ext_resource type="PackedScene" uid="uid://gujot7nulkea" path="res://scenes/players/furniture_player.tscn" id="2_e21e3"]
+[ext_resource type="PackedScene" uid="uid://canvhsa24qm8w" path="res://scenes/objects/Furniture.tscn" id="4_kycti"]
+[ext_resource type="PackedScene" uid="uid://bnj21i42jos8e" path="res://scenes/objects/kill_zone.tscn" id="5_fk01v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sgg1t"]
 resource_name = "furniture_world_texture"
@@ -60,3 +62,10 @@ layer_0/tile_data = PackedInt32Array(2, 65536, 0, 1, 0, 0, 0, 0, 3, 3, 0, 0, 4, 
 
 [node name="player" parent="." instance=ExtResource("2_e21e3")]
 position = Vector2(82, 56)
+
+[node name="Furniture2" parent="." instance=ExtResource("4_kycti")]
+position = Vector2(98, 56)
+
+[node name="kill_zone" parent="." instance=ExtResource("5_fk01v")]
+position = Vector2(104, 24)
+scale = Vector2(0.64, 0.64)
