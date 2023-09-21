@@ -1,4 +1,4 @@
-extends Sprite2D
+extends CharacterBody2D
 
 enum CatState 
 { 
@@ -16,6 +16,10 @@ func _ready():
 	
 func _physics_process(delta):
 	var is_start = next_state != current_state
+	
+	if is_start:
+		print("Cat Entering state: ", CatState.keys()[next_state])
+		current_state = next_state
 	
 	match current_state:
 		CatState.IDLE:
@@ -61,3 +65,4 @@ func _update_move(is_start):
 		$AnimationPlayer.play("Walk")
 		
 	# need to do some movement here
+	$Movement._move_down()

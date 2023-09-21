@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkj3ftov4yql"]
+[gd_scene load_steps=9 format=3 uid="uid://dkj3ftov4yql"]
 
 [ext_resource type="Script" path="res://scripts/npcs/cat.gd" id="1_op2uf"]
 [ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="3_3igg2"]
@@ -20,7 +20,9 @@ _data = {
 "Walk": SubResource("Animation_m1t0v")
 }
 
-[node name="cat" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_i8d1f"]
+
+[node name="cat" type="CharacterBody2D"]
 script = ExtResource("1_op2uf")
 
 [node name="Movement" type="Node" parent="."]
@@ -37,3 +39,6 @@ one_shot = true
 
 [node name="TempSprite" type="Sprite2D" parent="."]
 texture = ExtResource("3_elpnv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i8d1f")
