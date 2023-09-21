@@ -63,9 +63,9 @@ layer_0/tile_data = PackedInt32Array(2, 65536, 0, 1, 0, 0, 0, 0, 3, 3, 0, 0, 4, 
 [node name="player" parent="." instance=ExtResource("2_e21e3")]
 position = Vector2(82, 56)
 
-[node name="Furniture2" parent="." instance=ExtResource("4_kycti")]
-position = Vector2(98, 56)
-
 [node name="kill_zone" parent="." instance=ExtResource("5_fk01v")]
 position = Vector2(104, 24)
 scale = Vector2(0.64, 0.64)
+
+[node name="Furniture" parent="." instance=ExtResource("4_kycti")]
+position = Vector2(112, 48)

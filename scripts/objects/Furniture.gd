@@ -1,4 +1,4 @@
-extends AnimatableBody2D
+extends StaticBody2D
 
 @export var velocity : Vector2
 
@@ -47,6 +47,6 @@ func _push(direction : Vector2):
 	elif direction.x > 0:
 		movement._move_right()
 	elif direction.y < 0:
-		movement._move_up()
+		movement._move_down()
 	elif direction.y > 0:
-		movement._move_down() 
+		movement._move_up() 
