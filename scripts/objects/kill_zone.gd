@@ -7,3 +7,5 @@ signal kill_zone_entered
 func _on_area_entered(body):
 	if body.name == body_name:
 		kill_zone_entered.emit()
+	if body.is_in_group("furniture"):
+		body._entered_area()
