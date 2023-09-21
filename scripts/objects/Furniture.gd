@@ -1,6 +1,7 @@
 extends StaticBody2D
 
-@export var velocity : Vector2
+@export var fancy_name : String = "This is the name of the furniture."
+@export var description : String = "This is the description of a piece of furniture..."
 
 @onready var movement = get_node("Movement")
 @onready var anim = get_node("AnimationPlayer")

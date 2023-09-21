@@ -69,3 +69,5 @@ scale = Vector2(0.64, 0.64)
 
 [node name="Furniture" parent="." instance=ExtResource("4_kycti")]
 position = Vector2(112, 48)
+fancy_name = "Sofa"
+description = "This is a very rubbish sofa"
