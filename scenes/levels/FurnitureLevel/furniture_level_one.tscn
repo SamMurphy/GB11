@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/levels/furniture_level_one.gd" id="1_g8ckv"]
 [ext_resource type="Texture2D" uid="uid://cxo6h6h4epvls" path="res://assets/textures/REPLACE_ME/Furniture/WallTileset.png" id="1_hu8a1"]
 [ext_resource type="PackedScene" uid="uid://gujot7nulkea" path="res://scenes/players/furniture_player.tscn" id="2_e21e3"]
-[ext_resource type="PackedScene" path="res://scenes/ui/interact_dialogue.tscn" id="3_jnm5g"]
+[ext_resource type="PackedScene" uid="uid://jrp1qntu3rqt" path="res://scenes/ui/interact_dialogue.tscn" id="3_jnm5g"]
 [ext_resource type="PackedScene" uid="uid://canvhsa24qm8w" path="res://scenes/objects/Furniture.tscn" id="4_kycti"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sgg1t"]
@@ -75,3 +75,5 @@ grow_vertical = 2
 
 [node name="Furniture" parent="." instance=ExtResource("4_kycti")]
 position = Vector2(104, 48)
+fancy_name = "A chair"
+description = "A lovely chair, perfect for two."

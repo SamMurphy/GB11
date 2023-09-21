@@ -8,6 +8,8 @@ extends StaticBody2D
 @onready var movement = get_node("Movement")
 @onready var anim = get_node("AnimationPlayer")
 
+@onready var interact = get_node("../player/DialogueInteraction").get_node("BoxOfWords")
+
 var timer = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -21,6 +23,10 @@ func _process(delta):
 func _entered_area():
 	pass
 	#anim.play("active")
+	
+func activateDialogue():
+	interact._sayDialogue(fancy_name, description)
+	
 	
 func _rotate(clockwise : bool = true):
 	if clockwise:

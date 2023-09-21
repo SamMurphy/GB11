@@ -19,10 +19,11 @@ func _physics_process(delta):
 	var yDirection = Input.get_axis("DPad_up", "DPad_down")
 	
 	if Input.is_action_pressed("A") && is_instance_valid(currentFurniture):
-		currentFurniture._push(Vector2(xDirection, yDirection))
+		currentFurniture._push(Vector2(xDirection, yDirection))		
+#
 		
 	if Input.is_action_just_pressed("B") && is_instance_valid(currentFurniture):
-		currentFurniture._rotate()
+		currentFurniture.activateDialogue()
 		
 	if xDirection:
 		if xDirection == -1:
