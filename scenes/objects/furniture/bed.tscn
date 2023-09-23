@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://bc7qqtobp4uo3"]
+[gd_scene load_steps=17 format=3 uid="uid://bc7qqtobp4uo3"]
 
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_a0brg"]
 [ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="2_5otq6"]
+[ext_resource type="Material" uid="uid://d140yq8lirhjr" path="res://assets/shaders/Furniture.tres" id="2_osuf3"]
 [ext_resource type="Texture2D" uid="uid://i61xxaacu8sx" path="res://assets/textures/Furniture/Bed/Bed_back.png" id="3_gc3a4"]
 [ext_resource type="Texture2D" uid="uid://ceaf13abfq3w2" path="res://assets/textures/Furniture/Bed/Bed_front.png" id="4_rj3xa"]
 [ext_resource type="Texture2D" uid="uid://ifpv27tsuxcq" path="res://assets/textures/Furniture/Bed/Bed_right.png" id="5_cu4dx"]
@@ -145,6 +146,7 @@ description = "It's never too early to go to bed right?"
 is_end_game_object = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = ExtResource("2_osuf3")
 position = Vector2(8, -8)
 sprite_frames = SubResource("SpriteFrames_nb45i")
 animation = &"front"

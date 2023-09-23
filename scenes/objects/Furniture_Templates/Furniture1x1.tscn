@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cboub1d8wpe4r"]
+[gd_scene load_steps=14 format=3 uid="uid://cboub1d8wpe4r"]
 
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_5p6b8"]
 [ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="2_7rxia"]
+[ext_resource type="Material" uid="uid://d140yq8lirhjr" path="res://assets/shaders/Furniture.tres" id="2_7wjtc"]
 [ext_resource type="Texture2D" uid="uid://gvbx5norc6fv" path="res://assets/textures/REPLACE_ME/Furniture/Drawers.png" id="3_x2wix"]
 [ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="7_wdaov"]
 
@@ -139,6 +140,7 @@ _data = {
 script = ExtResource("1_5p6b8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = ExtResource("2_7wjtc")
 sprite_frames = SubResource("SpriteFrames_nb45i")
 animation = &"front"
 
