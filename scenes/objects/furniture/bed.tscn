@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bc7qqtobp4uo3"]
+[gd_scene load_steps=18 format=3 uid="uid://svotf0k5i03i"]
 
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_a0brg"]
 [ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="2_5otq6"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ifpv27tsuxcq" path="res://assets/textures/Furniture/Bed/Bed_right.png" id="5_cu4dx"]
 [ext_resource type="Texture2D" uid="uid://cihsgvjn5hywg" path="res://assets/textures/Furniture/Bed/Bed_left.png" id="6_ar81x"]
 [ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="7_q4075"]
-[ext_resource type="PackedScene" uid="uid://bkkyab6rbqee3" path="res://scenes/objects/FurnitureCommon.tscn" id="9_1aep5"]
+[ext_resource type="PackedScene" path="res://scenes/objects/FurnitureCommon.tscn" id="9_1aep5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nb45i"]
 animations = [{
@@ -140,7 +140,7 @@ _data = {
 "right": SubResource("Animation_oml8v")
 }
 
-[node name="Furniture2x2" type="StaticBody2D" groups=["furniture"]]
+[node name="Furniture2x2" type="StaticBody2D" groups=["bedroom_item", "furniture"]]
 script = ExtResource("1_a0brg")
 fancy_name = "Queen Sized Bed"
 description = "It's never too early to go to bed right?"

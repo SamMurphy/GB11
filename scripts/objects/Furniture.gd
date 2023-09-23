@@ -26,7 +26,7 @@ var time_to_push : float = 1
 var can_push : bool = false
 
 var collision_checker_counter : int = 0
-
+var last_direction_pushed : Vector2 = Vector2(0,0)
 var tween
 
 # Called when the node enters the scene tree for the first time.
@@ -72,9 +72,15 @@ func _rotate():
 		"right":
 			anim.play("front")
 
-func _push(direction : Vector2):
+func _push(direction : Vector2) -> bool:
+	if last_direction_pushed != direction:
+		can_push = true
+	
 	if can_push == false:
-		return
+		return false
+		
+	if direction.x == 0 && direction.y == 0:
+		return false
 
 	if direction.x < 0:
 		movement._move_left()
@@ -87,6 +93,9 @@ func _push(direction : Vector2):
 
 	if movement._is_at_target_position() == false:
 		can_push = false
+		
+	last_direction_pushed = direction
+	return true
 
 func _on_move_timer_timeout():
 	can_push = true

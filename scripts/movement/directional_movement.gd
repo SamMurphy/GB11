@@ -53,7 +53,8 @@ func _physics_process(delta):
 	else:
 		var col = physicsBody2D.move_and_collide(physicsBody2D.velocity * delta)
 		if col:
-			targetPosition = lastSafeTarget
+			if col.get_collider().name != "player" && !physicsBody2D.is_in_group("furniture"):
+				targetPosition = lastSafeTarget
 
 # This will only work if we've already reached our target
 func _add_relative_vec_to_target(inPos : Vector2):

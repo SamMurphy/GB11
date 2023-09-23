@@ -1,18 +1,20 @@
-[gd_scene load_steps=17 format=3 uid="uid://4xscfjeqhf04"]
+[gd_scene load_steps=19 format=3 uid="uid://dxmalodca3xtp"]
 
-[ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_2j038"]
-[ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_np2po"]
-[ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="3_j5dki"]
-[ext_resource type="Texture2D" uid="uid://cub4yyosrvd56" path="res://assets/textures/Furniture/DiningTable/dining_table_horizontal.png" id="4_ry0q3"]
-[ext_resource type="Texture2D" uid="uid://nina3d1cxgec" path="res://assets/textures/Furniture/DiningTable/dining_table_vertical.png" id="5_0jv02"]
-[ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="8_ruaiy"]
-[ext_resource type="PackedScene" path="res://scenes/objects/FurnitureCommon.tscn" id="9_d4d1e"]
+[ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_1topl"]
+[ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_eh8sk"]
+[ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="3_s16jy"]
+[ext_resource type="Texture2D" uid="uid://d037g45yix5lu" path="res://assets/textures/Furniture/Sofa Rubbish/sofa_rubbish_rear.png" id="4_wgt3c"]
+[ext_resource type="Texture2D" uid="uid://cl5j82qhjhasm" path="res://assets/textures/Furniture/Sofa Rubbish/sofa_rubbish_front.png" id="5_n08q2"]
+[ext_resource type="Texture2D" uid="uid://c86o7la3pyruy" path="res://assets/textures/Furniture/Sofa Rubbish/sofa_rubbish_right.png" id="6_qmkqh"]
+[ext_resource type="Texture2D" uid="uid://q8ige8eyed0n" path="res://assets/textures/Furniture/Sofa Rubbish/sofa_rubbish_left.png" id="7_fo5dj"]
+[ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="8_xojfh"]
+[ext_resource type="PackedScene" path="res://scenes/objects/FurnitureCommon.tscn" id="9_2jajw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nb45i"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_j5dki")
+"texture": ExtResource("3_s16jy")
 }],
 "loop": true,
 "name": &"active",
@@ -20,7 +22,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_ry0q3")
+"texture": ExtResource("4_wgt3c")
 }],
 "loop": true,
 "name": &"back",
@@ -28,7 +30,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_ry0q3")
+"texture": ExtResource("5_n08q2")
 }],
 "loop": true,
 "name": &"front",
@@ -36,7 +38,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_0jv02")
+"texture": ExtResource("6_qmkqh")
 }],
 "loop": true,
 "name": &"left",
@@ -44,7 +46,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_0jv02")
+"texture": ExtResource("7_fo5dj")
 }],
 "loop": true,
 "name": &"right",
@@ -381,11 +383,11 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqfba"]
 size = Vector2(15, 15)
 
-[node name="Furniture2x1" type="StaticBody2D" groups=["bedroom_item", "furniture"]]
-script = ExtResource("1_2j038")
+[node name="Furniture2x1" type="StaticBody2D" groups=["furniture"]]
+script = ExtResource("1_1topl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-material = ExtResource("2_np2po")
+material = ExtResource("2_eh8sk")
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_nb45i")
 animation = &"front"
@@ -400,7 +402,7 @@ libraries = {
 }
 
 [node name="Movement" type="Node" parent="."]
-script = ExtResource("8_ruaiy")
+script = ExtResource("8_xojfh")
 
 [node name="CollisionChecker" type="Area2D" parent="."]
 
@@ -408,7 +410,7 @@ script = ExtResource("8_ruaiy")
 position = Vector2(8, 0)
 shape = SubResource("RectangleShape2D_kqfba")
 
-[node name="FurnitureCommon" parent="." instance=ExtResource("9_d4d1e")]
+[node name="FurnitureCommon" parent="." instance=ExtResource("9_2jajw")]
 
 [connection signal="body_entered" from="CollisionChecker" to="." method="_on_collision_checker_body_entered"]
 [connection signal="body_exited" from="CollisionChecker" to="." method="_on_collision_checker_body_exited"]
