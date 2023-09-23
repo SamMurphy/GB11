@@ -337,3 +337,7 @@ libraries = {
 
 [node name="Movement" type="Node" parent="."]
 script = ExtResource("7_rn1pj")
+
+[node name="MoveTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]

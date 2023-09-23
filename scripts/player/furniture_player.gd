@@ -19,33 +19,46 @@ func _physics_process(delta):
 	var yDirection = Input.get_axis("DPad_up", "DPad_down")
 	
 	if Input.is_action_pressed("A") && is_instance_valid(currentFurniture):
-		currentFurniture._push(Vector2(xDirection, yDirection))		
-#
+		currentFurniture._push(Vector2(xDirection, yDirection))
 		
 	if Input.is_action_just_pressed("B") && is_instance_valid(currentFurniture):
-		currentFurniture.activateDialogue()
-		
-	if xDirection:
-		if xDirection == -1:
-			movement._move_left()
-			get_node("sprite").flip_h = true
-		elif xDirection == 1:
-			movement._move_right()
-			get_node("sprite").flip_h = false
-	elif yDirection:
-		if yDirection == 1:
-			movement._move_up()
-		else:
-			movement._move_down()
+		currentFurniture._rotate()
 	
-	if velocity.x < 0:
+	# Cast a ray to make sure there isn't anything in front of us	
+	var spaceState = get_world_2d().direct_space_state
+	var rayLength = (movement._get_step_distance() / 2.0) + 1.0
+	var rayDirection = Vector2(xDirection, yDirection) * rayLength
+	var query = PhysicsRayQueryParameters2D.create(global_position, global_position + rayDirection)
+	query.exclude = [self]
+	# if this is empty then there is nothing in front of us
+	var result = spaceState.intersect_ray(query)
+	
+	# Movement
+	if result.is_empty():
+		if xDirection:
+			if xDirection == -1:
+				movement._move_left()
+				get_node("sprite").flip_h = true
+			elif xDirection == 1:
+				movement._move_right()
+				get_node("sprite").flip_h = false
+		elif yDirection:
+			if yDirection == 1:
+				movement._move_up()
+			else:
+				movement._move_down()
+	
+	# Animation - this also changes where the object dectector is
+	if xDirection <= -1:
 		anim.play("walk_left")
-	elif velocity.x > 0:
+	elif xDirection >= 1:
 		anim.play("walk_right")
-	elif velocity.y < 0:
-		anim.play("walk_down")
-	elif velocity.y > 0:
+	elif yDirection <= -1:
 		anim.play("walk_up")
+	elif yDirection >= 1:
+		anim.play("walk_down")
+	elif velocity.y == 0 && velocity.x == 0:
+		anim.play("idle")
 	else:
 		anim.play("idle")
 

@@ -75,5 +75,4 @@ grow_vertical = 2
 
 [node name="Furniture" parent="." instance=ExtResource("4_kycti")]
 position = Vector2(104, 48)
-fancy_name = "A chair"
-description = "A lovely chair, perfect for two."
+weight = 1.0
