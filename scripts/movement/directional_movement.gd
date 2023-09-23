@@ -74,3 +74,9 @@ func _move_up():
 
 func _move_down():
 	_add_relative_vec_to_target(Vector2(0.0, -STEP_DISTANCE))
+	
+func _is_at_target_position() -> bool:
+	if physicsBody2D.position == targetPosition:
+		return true
+	else:
+		return false
