@@ -31,7 +31,7 @@ func _input(ev):
 	elif(xDirection > 0):
 		endDay = false
 		select.set_position(Vector2(58, 26))
-	if Input.is_action_just_pressed("A"):
+	if Input.is_action_just_pressed("A") && is_visible():
 		choice.emit(endDay)
 		print(endDay)
 		hideAll()

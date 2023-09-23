@@ -20,7 +20,7 @@ func on_dialogue_finish():
 func on_end_day_dialog_finish(is_day_ended : bool):
 	if is_day_ended:
 		#trigger end day on level
-		position = spawn_point
+		position = spawn_point   
 		movement.targetPosition = spawn_point
 		get_parent()._load_next_stage()
 		return
