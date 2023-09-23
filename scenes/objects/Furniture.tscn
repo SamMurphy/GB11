@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://canvhsa24qm8w"]
+[gd_scene load_steps=18 format=3 uid="uid://canvhsa24qm8w"]
 
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_ptbax"]
 [ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="2_5xv8h"]
+[ext_resource type="Material" uid="uid://d140yq8lirhjr" path="res://assets/shaders/Furniture.tres" id="2_jljfw"]
 [ext_resource type="Texture2D" uid="uid://b6go60lyb6f74" path="res://assets/textures/REPLACE_ME/Furniture/sofa/back.png" id="3_8ux6i"]
 [ext_resource type="Texture2D" uid="uid://31fubx0ou2ro" path="res://assets/textures/REPLACE_ME/Furniture/sofa/front.png" id="4_vfe3k"]
 [ext_resource type="Texture2D" uid="uid://bhbc5fpfrlho3" path="res://assets/textures/REPLACE_ME/Furniture/sofa/left.png" id="5_1iute"]
@@ -385,6 +386,7 @@ size = Vector2(15, 15)
 script = ExtResource("1_ptbax")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = ExtResource("2_jljfw")
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_nb45i")
 animation = &"front"
@@ -402,6 +404,7 @@ libraries = {
 script = ExtResource("7_rn1pj")
 
 [node name="MoveTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="CollisionChecker" type="Area2D" parent="."]
 

@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://d140yq8lirhjr"]
+
+[ext_resource type="Shader" path="res://assets/shaders/Furniture.gdshader" id="1_e0gpk"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_e0gpk")
+shader_parameter/flash_value = 0.0
+shader_parameter/flash_colour = Vector4(1, 1, 1, 1)
