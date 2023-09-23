@@ -9,7 +9,6 @@ var endDay = false
 @onready var select = get_node("Selected")
 
 signal choice
-signal dialogue_finished
 
 func _ready():
 	$Timer.wait_time = text_speed as float
@@ -49,10 +48,6 @@ func _endDayInteract():
 		totalCharCount += 1
 		$Timer.start()
 		await($Timer.timeout)
-		# Wait for user input to continue, start visible characters at current character
-		#await(choice)		
-	#hideAll()
-	#dialogue_finished.emit()
 			
 	return
 	
