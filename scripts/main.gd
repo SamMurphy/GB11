@@ -7,9 +7,12 @@ var current_level_index = -1
 var current_level : Node
 var menu_scene : Node
 
+@onready var background_music = get_node("BackgroundMusic")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	load_main_menu()
+	background_music.play()
 	
 func load_main_menu():
 	GameGlobals.ResetGame()
