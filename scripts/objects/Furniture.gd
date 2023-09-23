@@ -15,10 +15,10 @@ extends StaticBody2D
 
 @onready var interact = get_node("../player/DialogueInteraction").get_node("CanvasLayer").get_node("BoxOfWords")
 
-var timer = 0
 var time_to_push : float = 1
 var can_push : bool = false
 
+var collision_checker_counter : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,6 +29,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#print(collision_checker_counter)
 	if can_push == false && movement._is_at_target_position() == false && move_timer.is_stopped():
 			move_timer.start(time_to_push)
 
@@ -41,26 +42,18 @@ func activateDialogue():
 	
 	
 func _rotate(clockwise : bool = true):
-	if clockwise:
-		match anim.get_assigned_animation():
-			"front":
-				anim.play("left")
-			"left":
-				anim.play("back")
-			"back":
-				anim.play("right")
-			"right":
-				anim.play("front")
-	else:
-		match anim.get_assigned_animation():
-			"front":
-				anim.play("right")
-			"right":
-				anim.play("back")
-			"back":
-				anim.play("left")
-			"left":
-				anim.play("front")
+	if collision_checker_counter > 0:
+		return
+	
+	match anim.get_assigned_animation():
+		"front":
+			anim.play("left")
+		"left":
+			anim.play("back")
+		"back":
+			anim.play("right")
+		"right":
+			anim.play("front")
 
 func _push(direction : Vector2):
 	if can_push == false:
@@ -80,3 +73,13 @@ func _push(direction : Vector2):
 
 func _on_move_timer_timeout():
 	can_push = true
+
+
+func _on_collision_checker_body_entered(body):
+	if body != self:
+		collision_checker_counter += 1
+
+
+func _on_collision_checker_body_exited(body):
+	if body != self:
+		collision_checker_counter -= 1
