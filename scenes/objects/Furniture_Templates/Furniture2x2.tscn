@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://n8yl2a1g240s"]
+[gd_scene load_steps=18 format=3 uid="uid://n8yl2a1g240s"]
 
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_oo5or"]
 [ext_resource type="Material" uid="uid://d140yq8lirhjr" path="res://assets/shaders/Furniture.tres" id="1_t5ouk"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b17on0urapdfv" path="res://assets/textures/REPLACE_ME/Furniture/placeholder4x4/placeholder_left.png" id="5_euv68"]
 [ext_resource type="Texture2D" uid="uid://jma402cbugye" path="res://assets/textures/REPLACE_ME/Furniture/placeholder4x4/placeholder_right.png" id="6_vq4go"]
 [ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="7_3ncra"]
+[ext_resource type="PackedScene" uid="uid://bkkyab6rbqee3" path="res://scenes/objects/FurnitureCommon.tscn" id="9_xtqne"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nb45i"]
 animations = [{
@@ -160,6 +161,4 @@ libraries = {
 [node name="Movement" type="Node" parent="."]
 script = ExtResource("7_3ncra")
 
-[node name="MoveTimer" type="Timer" parent="."]
-
-[connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]
+[node name="FurnitureCommon" parent="." instance=ExtResource("9_xtqne")]

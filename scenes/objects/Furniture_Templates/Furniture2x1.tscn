@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cfcf0i5s4c1ud"]
+[gd_scene load_steps=19 format=3 uid="uid://cfcf0i5s4c1ud"]
 
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_juxg3"]
 [ext_resource type="Material" uid="uid://d140yq8lirhjr" path="res://assets/shaders/Furniture.tres" id="2_78k3a"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bhbc5fpfrlho3" path="res://assets/textures/REPLACE_ME/Furniture/sofa/left.png" id="5_v3hjt"]
 [ext_resource type="Texture2D" uid="uid://dpxppnlcdajwf" path="res://assets/textures/REPLACE_ME/Furniture/sofa/right.png" id="6_b1s12"]
 [ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="7_fjg8f"]
+[ext_resource type="PackedScene" uid="uid://bkkyab6rbqee3" path="res://scenes/objects/FurnitureCommon.tscn" id="9_47nny"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nb45i"]
 animations = [{
@@ -403,14 +404,13 @@ libraries = {
 [node name="Movement" type="Node" parent="."]
 script = ExtResource("7_fjg8f")
 
-[node name="MoveTimer" type="Timer" parent="."]
-
 [node name="CollisionChecker" type="Area2D" parent="."]
 
 [node name="CollisionCheckerShape" type="CollisionShape2D" parent="CollisionChecker"]
 position = Vector2(8, 0)
 shape = SubResource("RectangleShape2D_kqfba")
 
-[connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]
+[node name="FurnitureCommon" parent="." instance=ExtResource("9_47nny")]
+
 [connection signal="body_entered" from="CollisionChecker" to="." method="_on_collision_checker_body_entered"]
 [connection signal="body_exited" from="CollisionChecker" to="." method="_on_collision_checker_body_exited"]
