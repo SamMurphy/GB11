@@ -16,7 +16,8 @@ extends StaticBody2D
 @onready var movement = get_node("Movement")
 @onready var sprite = get_node("AnimatedSprite2D")
 @onready var anim = get_node("AnimationPlayer")
-@onready var move_timer = get_node("MoveTimer")
+@onready var move_timer = get_node("FurnitureCommon/MoveTimer")
+@onready var error_sound = get_node("FurnitureCommon/ErrorSound")
 
 @onready var interact = get_node("../player/DialogueInteraction").get_node("CanvasLayer").get_node("BoxOfWords")
 @onready var end_day = get_node("../player/EndDayInteraction").get_node("CanvasLayer").get_node("BoxOfWords")
@@ -52,7 +53,8 @@ func endGameDialogue():
 
 func _rotate():
 	if collision_checker_counter > 0:
-		_flash_object()		
+		_flash_object()
+		error_sound.play()
 		return
 	
 	match anim.get_assigned_animation():
