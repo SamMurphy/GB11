@@ -19,5 +19,5 @@ func _load_next_stage():
 	if current_level_stage < scenes.size():
 		var scene_to_load = ResourceLoader.load(scenes[current_level_stage])
 		var loaded_scene = scene_to_load.instantiate()
-		add_child(loaded_scene)
+		self.add_child(loaded_scene)
 		current_level_stage += 1

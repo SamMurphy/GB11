@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_ptbax"]
 [ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="2_5xv8h"]
-[ext_resource type="Material" uid="uid://d140yq8lirhjr" path="res://assets/shaders/Furniture.tres" id="2_jljfw"]
+[ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_jljfw"]
 [ext_resource type="Texture2D" uid="uid://b6go60lyb6f74" path="res://assets/textures/REPLACE_ME/Furniture/sofa/back.png" id="3_8ux6i"]
 [ext_resource type="Texture2D" uid="uid://31fubx0ou2ro" path="res://assets/textures/REPLACE_ME/Furniture/sofa/front.png" id="4_vfe3k"]
 [ext_resource type="Texture2D" uid="uid://bhbc5fpfrlho3" path="res://assets/textures/REPLACE_ME/Furniture/sofa/left.png" id="5_1iute"]

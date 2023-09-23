@@ -19,8 +19,8 @@ extends StaticBody2D
 @onready var move_timer = get_node("FurnitureCommon/MoveTimer")
 @onready var error_sound = get_node("FurnitureCommon/ErrorSound")
 
-@onready var interact = get_node("../player/DialogueInteraction").get_node("CanvasLayer").get_node("BoxOfWords")
-@onready var end_day = get_node("../player/EndDayInteraction").get_node("CanvasLayer").get_node("BoxOfWords")
+var interact
+var end_day
 
 var time_to_push : float = 1
 var can_push : bool = false
@@ -35,6 +35,10 @@ func _ready():
 	can_push = true
 	time_to_push = weight
 	move_timer.wait_time = time_to_push
+		
+	var player = get_tree().get_nodes_in_group("Player")[0]	
+	interact = player.get_node("DialogueInteraction").get_node("CanvasLayer").get_node("BoxOfWords")
+	end_day = player.get_node("EndDayInteraction").get_node("CanvasLayer").get_node("BoxOfWords")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
