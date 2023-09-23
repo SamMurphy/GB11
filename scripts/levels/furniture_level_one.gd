@@ -21,3 +21,5 @@ func _load_next_stage():
 		var loaded_scene = scene_to_load.instantiate()
 		self.add_child(loaded_scene)
 		current_level_stage += 1
+	else:
+		_level_complete()
