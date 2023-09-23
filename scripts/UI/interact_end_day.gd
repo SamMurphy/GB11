@@ -4,11 +4,12 @@ extends ColorRect
 
 var textBoxLimit = 20
 
-var endDay = false
+
 
 @onready var select = get_node("Selected")
 
 signal choice
+var endDay = false
 
 func _ready():
 	$Timer.wait_time = text_speed as float
@@ -21,6 +22,7 @@ func hideAll():
 
 func _input(ev):
 	var xDirection = Input.get_axis("DPad_left", "DPad_right")
+	
 	if (xDirection < 0):
 		endDay = true
 		select.set_position(Vector2(21, 26))
