@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4oj43uvdy5cb"]
+[gd_scene load_steps=13 format=3 uid="uid://c4oj43uvdy5cb"]
 
 [ext_resource type="Script" path="res://scripts/levels/furniture_level_one.gd" id="1_g8ckv"]
 [ext_resource type="Texture2D" uid="uid://cxo6h6h4epvls" path="res://assets/textures/REPLACE_ME/Furniture/WallTileset.png" id="1_hu8a1"]
@@ -76,11 +76,14 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_sgg1t")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iieds"]
-size = Vector2(113, 62)
+size = Vector2(113, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxonh"]
+size = Vector2(97, 112)
 
 [node name="furniture_level_one" type="Node2D"]
 script = ExtResource("1_g8ckv")
-scenes = Array[String](["res://scenes/levels/FurnitureLevel/LevelStages/furniture_stage_0.tscn", "res://scenes/levels/FurnitureLevel/LevelStages/furniture_stage_1.tscn"])
+scenes = Array[String](["res://scenes/levels/FurnitureLevel/LevelStages/furniture_stage_0.tscn", "res://scenes/levels/FurnitureLevel/LevelStages/furniture_stage_1.tscn", "res://scenes/levels/FurnitureLevel/LevelStages/furniture_stage_2.tscn"])
 
 [node name="WorldMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_qiqey")
@@ -121,3 +124,9 @@ script = ExtResource("8_44qxb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="game_scorer/Bedroom"]
 position = Vector2(280.5, 129)
 shape = SubResource("RectangleShape2D_iieds")
+
+[node name="Office" type="Area2D" parent="game_scorer" groups=["office_item", "score_item"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="game_scorer/Office"]
+position = Vector2(287.5, 7)
+shape = SubResource("RectangleShape2D_lxonh")
