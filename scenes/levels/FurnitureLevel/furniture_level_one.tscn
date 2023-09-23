@@ -55,7 +55,6 @@ sources/0 = SubResource("TileSetAtlasSource_sgg1t")
 
 [node name="furniture_level_one" type="Node2D"]
 script = ExtResource("1_g8ckv")
-scenes = Array[String](["res://scenes/levels/FurnitureLevel/LevelStages/furniture_stage_0.tscn"])
 
 [node name="WorldMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_qiqey")
