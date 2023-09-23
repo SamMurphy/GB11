@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br28a1qrglh8s"
-path="res://.godot/imported/Djungelskog.png-b601c8971ced5bf9f9d41f87979deade.ctex"
+uid="uid://ckw0srqwkdqqh"
+path="res://.godot/imported/DogHouse.png-df4a3c6377ae5d295477814e4fee4a27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Furniture/Bear/Djungelskog.png"
-dest_files=["res://.godot/imported/Djungelskog.png-b601c8971ced5bf9f9d41f87979deade.ctex"]
+source_file="res://assets/textures/Furniture/Dog House/DogHouse.png"
+dest_files=["res://.godot/imported/DogHouse.png-df4a3c6377ae5d295477814e4fee4a27.ctex"]
 
 [params]
 

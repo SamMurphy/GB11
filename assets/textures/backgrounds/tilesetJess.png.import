@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6rmnfetnvsuo"
-path="res://.godot/imported/DjungelskogBack.png-b8a7b46db4d56a55d6e18124d44421b2.ctex"
+uid="uid://bo7sjaak8y8xf"
+path="res://.godot/imported/tilesetJess.png-39e21882f2d4507c6cb07d8bc915d8e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Furniture/Bear/DjungelskogBack.png"
-dest_files=["res://.godot/imported/DjungelskogBack.png-b8a7b46db4d56a55d6e18124d44421b2.ctex"]
+source_file="res://assets/textures/backgrounds/tilesetJess.png"
+dest_files=["res://.godot/imported/tilesetJess.png-39e21882f2d4507c6cb07d8bc915d8e9.ctex"]
 
 [params]
 
