@@ -13,7 +13,7 @@ extends StaticBody2D
 @onready var anim = get_node("AnimationPlayer")
 @onready var move_timer = get_node("MoveTimer")
 
-@onready var interact = get_node("../player/DialogueInteraction").get_node("BoxOfWords")
+@onready var interact = get_node("../player/DialogueInteraction").get_node("CanvasLayer").get_node("BoxOfWords")
 
 var timer = 0
 var time_to_push : float = 1
