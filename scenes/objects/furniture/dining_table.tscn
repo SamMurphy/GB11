@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dbnl0ep7dd5ga"]
+[gd_scene load_steps=17 format=3 uid="uid://4xscfjeqhf04"]
 
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_2j038"]
 [ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_np2po"]
@@ -381,7 +381,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqfba"]
 size = Vector2(15, 15)
 
-[node name="Furniture2x1" type="StaticBody2D" groups=["furniture"]]
+[node name="Furniture2x1" type="StaticBody2D" groups=["bedroom_item", "furniture"]]
 script = ExtResource("1_2j038")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
