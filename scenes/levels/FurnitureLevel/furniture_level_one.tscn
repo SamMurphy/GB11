@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://gujot7nulkea" path="res://scenes/players/furniture_player.tscn" id="2_e21e3"]
 [ext_resource type="PackedScene" path="res://scenes/ui/interact_dialogue.tscn" id="3_jnm5g"]
 [ext_resource type="PackedScene" uid="uid://canvhsa24qm8w" path="res://scenes/objects/Furniture.tscn" id="4_kycti"]
-[ext_resource type="PackedScene" uid="uid://svotf0k5i03i" path="res://scenes/objects/furniture/bed.tscn" id="6_ebbg5"]
+[ext_resource type="PackedScene" uid="uid://bc7qqtobp4uo3" path="res://scenes/objects/furniture/Bed.tscn" id="6_sawng"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sgg1t"]
 resource_name = "furniture_world_texture"
@@ -79,5 +79,5 @@ grow_vertical = 2
 position = Vector2(104, 48)
 weight = 1.0
 
-[node name="Furniture2" parent="." instance=ExtResource("6_ebbg5")]
-position = Vector2(256, 136)
+[node name="Bed" parent="." instance=ExtResource("6_sawng")]
+position = Vector2(248, 138)
