@@ -9,6 +9,8 @@ extends StaticBody2D
 
 @export var velocity : Vector2
 
+@export var is_end_game_object : bool = false
+
 @onready var movement = get_node("Movement")
 @onready var anim = get_node("AnimationPlayer")
 @onready var move_timer = get_node("MoveTimer")
