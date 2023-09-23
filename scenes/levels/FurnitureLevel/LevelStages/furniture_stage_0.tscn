@@ -1,14 +1,14 @@
 [gd_scene load_steps=2 format=3 uid="uid://b55a6wx53ot55"]
 
-[ext_resource type="PackedScene" uid="uid://canvhsa24qm8w" path="res://scenes/objects/Furniture.tscn" id="1_fm38r"]
+[ext_resource type="PackedScene" uid="uid://bc7qqtobp4uo3" path="res://scenes/objects/furniture/Bed.tscn" id="1_w6ecr"]
 
 [node name="furniture_stage_0" type="Node2D"]
 
-[node name="Furniture" parent="." instance=ExtResource("1_fm38r")]
-position = Vector2(43, 78)
+[node name="Furniture2x2" parent="." instance=ExtResource("1_w6ecr")]
+position = Vector2(116, -33)
 
-[node name="Furniture2" parent="." instance=ExtResource("1_fm38r")]
-position = Vector2(108, 56)
+[node name="Furniture2x3" parent="." instance=ExtResource("1_w6ecr")]
+position = Vector2(30, -88)
 
-[node name="Furniture3" parent="." instance=ExtResource("1_fm38r")]
-position = Vector2(34, 33)
+[node name="Furniture2x4" parent="." instance=ExtResource("1_w6ecr")]
+position = Vector2(162, -85)

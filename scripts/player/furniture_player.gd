@@ -6,6 +6,8 @@ var movement
 
 var currentFurniture : Node2D
 
+var spawn_point
+
 var inDialogue = false
 
 @onready var anim = get_node("AnimationPlayer")
@@ -15,11 +17,21 @@ var inDialogue = false
 func on_dialogue_finish():
 	inDialogue = false
 
+func on_end_day_dialog_finish(is_day_ended : bool):
+	if is_day_ended:
+		#trigger end day on level
+		position = spawn_point
+		movement.targetPosition = spawn_point
+		get_parent()._load_next_stage()
+		return
+
 func _ready():
 	anim.play("idle")
 	movement = get_node("Movement")
 	interact.dialogue_finished.connect(on_dialogue_finish)
 	endGameInteract.dialogue_finished.connect(on_dialogue_finish)
+	endGameInteract.choice.connect(on_end_day_dialog_finish)
+	spawn_point = position
 
 func _physics_process(delta):
 	
