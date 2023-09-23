@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c4oj43uvdy5cb"]
+[gd_scene load_steps=17 format=3 uid="uid://c4oj43uvdy5cb"]
 
 [ext_resource type="Script" path="res://scripts/levels/furniture_level_one.gd" id="1_g8ckv"]
 [ext_resource type="Texture2D" uid="uid://cxo6h6h4epvls" path="res://assets/textures/REPLACE_ME/Furniture/WallTileset.png" id="1_hu8a1"]
@@ -87,6 +87,9 @@ size = Vector2(64, 62)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4erhp"]
 size = Vector2(129, 62)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8ub8"]
+size = Vector2(64, 63)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qicno"]
 size = Vector2(207, 94)
 
@@ -152,6 +155,12 @@ shape = SubResource("RectangleShape2D_7oyql")
 position = Vector2(79.5, 129)
 shape = SubResource("RectangleShape2D_4erhp")
 
+[node name="Bin" type="Area2D" parent="game_scorer" groups=["bin_area"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="game_scorer/Bin"]
+position = Vector2(192, -32.5)
+shape = SubResource("RectangleShape2D_i8ub8")
+
 [node name="LivingRoom" type="Area2D" parent="game_scorer" groups=["livingroom_item", "score_item"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="game_scorer/LivingRoom"]
@@ -161,4 +170,4 @@ shape = SubResource("RectangleShape2D_qicno")
 [node name="Garden" type="Area2D" parent="game_scorer" groups=["garden_item", "score_item"]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="game_scorer/Garden"]
-polygon = PackedVector2Array(-1, -6, -1, -127, 351, -128, 352, -64, 224, -64, 224, -1, 0, -1)
+polygon = PackedVector2Array(-1, -6, -1, -127, 351, -128, 352, -64, 160, -64, 160, 1, 0, -1)
