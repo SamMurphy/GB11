@@ -80,3 +80,6 @@ func _is_at_target_position() -> bool:
 		return true
 	else:
 		return false
+		
+func _get_step_distance() -> float:
+	return STEP_DISTANCE
