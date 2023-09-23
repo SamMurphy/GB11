@@ -80,7 +80,7 @@ size = Vector2(113, 62)
 
 [node name="furniture_level_one" type="Node2D"]
 script = ExtResource("1_g8ckv")
-scenes = Array[String](["res://scenes/levels/FurnitureLevel/LevelStages/furniture_stage_0.tscn", "res://scenes/levels/FurnitureLevel/LevelStages/furniture_stage_1.tscn"])
+scenes = Array[String](["res://scenes/levels/FurnitureLevel/LevelStages/furniture_stage_0.tscn", "res://scenes/levels/FurnitureLevel/LevelStages/furniture_stage_1.tscn", "res://scenes/levels/FurnitureLevel/LevelStages/furniture_stage_2.tscn"])
 
 [node name="WorldMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_qiqey")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://drs25fjsg8pk8"]
+
+[ext_resource type="PackedScene" uid="uid://cs78vtpprabga" path="res://scenes/objects/furniture/dining_chair.tscn" id="1_eh5j7"]
+
+[node name="furniture_stage_0" type="Node2D"]
+
+[node name="Furniture1x1" parent="." instance=ExtResource("1_eh5j7")]
+position = Vector2(100, -84)
+
+[node name="Furniture1x2" parent="." instance=ExtResource("1_eh5j7")]
+position = Vector2(116, -84)
+
+[node name="Furniture1x3" parent="." instance=ExtResource("1_eh5j7")]
+position = Vector2(116, -100)
+
+[node name="Furniture1x4" parent="." instance=ExtResource("1_eh5j7")]
+position = Vector2(100, -100)
