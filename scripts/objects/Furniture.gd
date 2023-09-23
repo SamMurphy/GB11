@@ -35,6 +35,7 @@ func _ready():
 	can_push = true
 	time_to_push = weight
 	move_timer.wait_time = time_to_push
+	move_timer.timeout.connect(_on_move_timer_timeout)
 		
 	var player = get_tree().get_nodes_in_group("Player")[0]	
 	interact = player.get_node("DialogueInteraction").get_node("CanvasLayer").get_node("BoxOfWords")
