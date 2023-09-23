@@ -12,7 +12,7 @@ shader_parameter/dither_amount = 0.0
 shader_parameter/brightness = 1.0
 shader_parameter/contrast = 1.0
 shader_parameter/saturation = 1.0
-shader_parameter/pallette = PackedVector3Array(237, 242, 206, 166, 214, 179, 90, 130, 152, 34, 39, 91)
+shader_parameter/pallette = PackedVector3Array(173, 229, 135, 112, 186, 101, 65, 125, 65, 33, 65, 58)
 shader_parameter/bayer_texture = ExtResource("2_5stho")
 
 [node name="main" type="Node2D"]
