@@ -35,6 +35,7 @@ func _input(ev):
 		choice.emit(endDay)
 		print(endDay)
 		hideAll()
+		dialogue_finished.emit()
 	
 func _endDayInteract():
 	var currentCharCount = 0
@@ -52,5 +53,5 @@ func _endDayInteract():
 		totalCharCount += 1
 		$Timer.start()
 		await($Timer.timeout)
-	dialogue_finished.emit()
+
 	return	
