@@ -142,6 +142,7 @@ _data = {
 script = ExtResource("1_a0brg")
 fancy_name = "Queen Sized Bed"
 description = "It's never too early to go to bed right?"
+is_end_game_object = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(8, -8)
