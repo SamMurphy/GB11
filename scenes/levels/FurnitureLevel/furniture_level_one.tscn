@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://jrp1qntu3rqt" path="res://scenes/ui/interact_dialogue.tscn" id="3_jnm5g"]
 [ext_resource type="PackedScene" uid="uid://canvhsa24qm8w" path="res://scenes/objects/Furniture.tscn" id="4_kycti"]
 [ext_resource type="PackedScene" uid="uid://kgecqmdymyyi" path="res://scenes/ui/interact_endday.tscn" id="5_856se"]
-[ext_resource type="PackedScene" uid="uid://bc7qqtobp4uo3" path="res://scenes/objects/furniture/Bed.tscn" id="6_sawng"]
+[ext_resource type="PackedScene" uid="uid://svotf0k5i03i" path="res://scenes/objects/furniture/Bed.tscn" id="6_sawng"]
 [ext_resource type="Script" path="res://scenes/levels/FurnitureLevel/game_scorer.gd" id="8_44qxb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sgg1t"]
@@ -121,8 +121,10 @@ offset_top = 22.25
 offset_right = 76.7499
 offset_bottom = 57.2503
 
-[node name="Furniture" parent="." groups=["livingroom_item"] instance=ExtResource("4_kycti")]
+[node name="Sofa" parent="." groups=["livingroom_item"] instance=ExtResource("4_kycti")]
 position = Vector2(104, 48)
+fancy_name = "Sofa"
+description = "A tasty sofa!"
 weight = 1.0
 
 [node name="Bed" parent="." groups=["bedroom_item"] instance=ExtResource("6_sawng")]
