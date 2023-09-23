@@ -1,0 +1,158 @@
+[gd_scene load_steps=13 format=3 uid="uid://cboub1d8wpe4r"]
+
+[ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_5p6b8"]
+[ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="2_7rxia"]
+[ext_resource type="Texture2D" uid="uid://ycdhrhaur0kq" path="res://assets/textures/REPLACE_ME/Furniture/Drawers.png" id="3_x2wix"]
+[ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="7_wdaov"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nb45i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7rxia")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x2wix")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x2wix")
+}],
+"loop": true,
+"name": &"front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x2wix")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x2wix")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4but"]
+size = Vector2(15, 15)
+
+[sub_resource type="Animation" id="Animation_c6ncp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"front"]
+}
+
+[sub_resource type="Animation" id="Animation_58een"]
+resource_name = "back"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"back"]
+}
+
+[sub_resource type="Animation" id="Animation_h2j63"]
+resource_name = "front"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"front"]
+}
+
+[sub_resource type="Animation" id="Animation_6twt1"]
+resource_name = "left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"left"]
+}
+
+[sub_resource type="Animation" id="Animation_oml8v"]
+resource_name = "right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"right"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q38dw"]
+_data = {
+"RESET": SubResource("Animation_c6ncp"),
+"back": SubResource("Animation_58een"),
+"front": SubResource("Animation_h2j63"),
+"left": SubResource("Animation_6twt1"),
+"right": SubResource("Animation_oml8v")
+}
+
+[node name="Furniture1x1" type="StaticBody2D" groups=["furniture"]]
+script = ExtResource("1_5p6b8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nb45i")
+animation = &"front"
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_o4but")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q38dw")
+}
+
+[node name="Movement" type="Node" parent="."]
+script = ExtResource("7_wdaov")
+
+[node name="MoveTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7qrjj1o388b"
-path="res://.godot/imported/DjungelskogBack.png-7b7a59a86b355a8c0ce2ea13198b2f92.ctex"
+uid="uid://5fp285j6ama4"
+path="res://.godot/imported/Bed.png-9b1d53c85170cc503dd7be98e055df70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/REPLACE_ME/Furniture/DjungelskogBack.png"
-dest_files=["res://.godot/imported/DjungelskogBack.png-7b7a59a86b355a8c0ce2ea13198b2f92.ctex"]
+source_file="res://assets/textures/Furniture/Bed.png"
+dest_files=["res://.godot/imported/Bed.png-9b1d53c85170cc503dd7be98e055df70.ctex"]
 
 [params]
 
