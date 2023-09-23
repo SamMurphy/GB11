@@ -10,6 +10,7 @@ var inDialogue = false
 
 @onready var anim = get_node("AnimationPlayer")
 @onready var interact = get_node("DialogueInteraction").get_node("CanvasLayer").get_node("BoxOfWords")
+@onready var endGameInteract = get_node("EndDayInteraction").get_node("CanvasLayer").get_node("BoxOfWords")
 
 func on_dialogue_finish():
 	inDialogue = false
@@ -33,7 +34,11 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("B") && is_instance_valid(currentFurniture):
 		inDialogue = true
-		currentFurniture.activateDialogue()
+		if currentFurniture.is_end_game_object:
+			currentFurniture.endGameDialogue()
+		else:
+			currentFurniture.activateDialogue()
+		
 	
 	# Cast a ray to make sure there isn't anything in front of us	
 	var spaceState = get_world_2d().direct_space_state

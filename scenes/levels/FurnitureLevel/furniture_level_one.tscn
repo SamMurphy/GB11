@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4oj43uvdy5cb"]
+[gd_scene load_steps=11 format=3 uid="uid://c4oj43uvdy5cb"]
 
 [ext_resource type="Script" path="res://scripts/levels/furniture_level_one.gd" id="1_g8ckv"]
 [ext_resource type="Texture2D" uid="uid://cxo6h6h4epvls" path="res://assets/textures/REPLACE_ME/Furniture/WallTileset.png" id="1_hu8a1"]
 [ext_resource type="PackedScene" uid="uid://gujot7nulkea" path="res://scenes/players/furniture_player.tscn" id="2_e21e3"]
 [ext_resource type="PackedScene" uid="uid://jrp1qntu3rqt" path="res://scenes/ui/interact_dialogue.tscn" id="3_jnm5g"]
 [ext_resource type="PackedScene" uid="uid://canvhsa24qm8w" path="res://scenes/objects/Furniture.tscn" id="4_kycti"]
+[ext_resource type="PackedScene" uid="uid://kgecqmdymyyi" path="res://scenes/ui/interact_endday.tscn" id="5_856se"]
 [ext_resource type="PackedScene" uid="uid://bc7qqtobp4uo3" path="res://scenes/objects/furniture/Bed.tscn" id="6_sawng"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sgg1t"]
@@ -53,6 +54,9 @@ texture = ExtResource("1_hu8a1")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_sgg1t")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iieds"]
+size = Vector2(113, 62)
+
 [node name="furniture_level_one" type="Node2D"]
 script = ExtResource("1_g8ckv")
 
@@ -74,9 +78,21 @@ offset_right = -2.0
 offset_bottom = 70.0
 grow_vertical = 2
 
+[node name="EndDayInteraction" parent="player" instance=ExtResource("5_856se")]
+offset_left = -43.25
+offset_top = 22.25
+offset_right = 76.7499
+offset_bottom = 57.2503
+
 [node name="Furniture" parent="." instance=ExtResource("4_kycti")]
 position = Vector2(104, 48)
 weight = 1.0
 
 [node name="Bed" parent="." instance=ExtResource("6_sawng")]
 position = Vector2(248, 138)
+
+[node name="Bedroom" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bedroom"]
+position = Vector2(280.5, 129)
+shape = SubResource("RectangleShape2D_iieds")

@@ -13,6 +13,7 @@ var endDay = false
 
 func _ready():
 	$Timer.wait_time = text_speed as float
+	hideAll()
 
 func hideAll():
 	$EndDay.hide()
