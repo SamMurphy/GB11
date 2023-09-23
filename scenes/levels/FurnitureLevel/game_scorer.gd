@@ -2,7 +2,12 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_check_group($Bedroom)
+	pass
+	
+func _check_all_groups():
+	var all_rooms = get_tree().get_nodes_in_group("score_item")
+	for room in all_rooms:
+		_check_group(room)
 
 func _check_group(room: Area2D):
 	# Get group of room
@@ -10,7 +15,6 @@ func _check_group(room: Area2D):
 	
 	# True positive = correct item in correct room
 	# True negative = wrong item in wrong room
-	# False positive
 	
 	#Get the items in the room
 	var score = 0
@@ -27,7 +31,7 @@ func _check_group(room: Area2D):
 	var scaled_score = score/(len(other_items)-1)
 	print("Score: ", scaled_score)
 	
-	# Check if everything colliding in group is the correct item
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	_check_group($Bedroom)
+	pass
+	#_check_all_groups()

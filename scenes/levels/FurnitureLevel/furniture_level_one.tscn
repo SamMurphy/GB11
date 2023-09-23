@@ -103,7 +103,7 @@ position = Vector2(248, 138)
 [node name="game_scorer" type="Node2D" parent="."]
 script = ExtResource("8_44qxb")
 
-[node name="Bedroom" type="Area2D" parent="game_scorer" groups=["bedroom_item"]]
+[node name="Bedroom" type="Area2D" parent="game_scorer" groups=["bedroom_item", "score_item"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="game_scorer/Bedroom"]
 position = Vector2(280.5, 129)
