@@ -9,6 +9,7 @@ var textBoxLimit = 20
 @onready var select = get_node("Selected")
 
 signal choice
+signal dialogue_finished
 var endDay = false
 
 func _ready():
@@ -51,6 +52,5 @@ func _endDayInteract():
 		totalCharCount += 1
 		$Timer.start()
 		await($Timer.timeout)
-			
-	return
-	
+	dialogue_finished.emit()
+	return	

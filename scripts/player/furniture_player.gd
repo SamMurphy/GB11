@@ -19,12 +19,15 @@ func _ready():
 	anim.play("idle")
 	movement = get_node("Movement")
 	interact.dialogue_finished.connect(on_dialogue_finish)
+	endGameInteract.dialogue_finished.connect(on_dialogue_finish)
 
 func _physics_process(delta):
 	
 	var xDirection = Input.get_axis("DPad_left", "DPad_right")
 	var yDirection = Input.get_axis("DPad_up", "DPad_down")
 	
+	if (inDialogue):
+		return
 	
 	if xDirection != 0 || yDirection != 0:
 		if Input.is_action_pressed("A") && is_instance_valid(currentFurniture):

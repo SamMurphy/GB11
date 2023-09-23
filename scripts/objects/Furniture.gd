@@ -16,6 +16,7 @@ extends StaticBody2D
 @onready var move_timer = get_node("MoveTimer")
 
 @onready var interact = get_node("../player/DialogueInteraction").get_node("CanvasLayer").get_node("BoxOfWords")
+@onready var end_day = get_node("../player/EndDayInteraction").get_node("CanvasLayer").get_node("BoxOfWords")
 
 var time_to_push : float = 1
 var can_push : bool = false
@@ -41,6 +42,9 @@ func _entered_area():
 	
 func activateDialogue():
 	interact._sayDialogue(fancy_name, description)
+
+func endGameDialogue():
+	end_day._endDayInteract()
 	
 	
 func _rotate(clockwise : bool = true):
