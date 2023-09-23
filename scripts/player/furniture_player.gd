@@ -18,11 +18,15 @@ func _physics_process(delta):
 	var xDirection = Input.get_axis("DPad_left", "DPad_right")
 	var yDirection = Input.get_axis("DPad_up", "DPad_down")
 	
-	if Input.is_action_pressed("A") && is_instance_valid(currentFurniture):
-		currentFurniture._push(Vector2(xDirection, yDirection))
-		
-	if Input.is_action_just_pressed("B") && is_instance_valid(currentFurniture):
+	
+	if xDirection != 0 || yDirection != 0:
+		if Input.is_action_pressed("A") && is_instance_valid(currentFurniture):
+			currentFurniture._push(Vector2(xDirection, yDirection))
+	elif Input.is_action_just_pressed("A") && is_instance_valid(currentFurniture):
 		currentFurniture._rotate()
+	
+	if Input.is_action_just_pressed("B") && is_instance_valid(currentFurniture):
+		currentFurniture.activateDialogue()
 	
 	# Cast a ray to make sure there isn't anything in front of us	
 	var spaceState = get_world_2d().direct_space_state
