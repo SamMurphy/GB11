@@ -31,10 +31,11 @@ func _input(ev):
 	elif(xDirection > 0):
 		endDay = false
 		select.set_position(Vector2(58, 26))
-	if Input.is_action_just_pressed("A"):
+	if Input.is_action_just_pressed("A") && is_visible():
 		choice.emit(endDay)
 		print(endDay)
 		hideAll()
+		dialogue_finished.emit()
 	
 func _endDayInteract():
 	var currentCharCount = 0
@@ -52,5 +53,5 @@ func _endDayInteract():
 		totalCharCount += 1
 		$Timer.start()
 		await($Timer.timeout)
-	dialogue_finished.emit()
+
 	return	

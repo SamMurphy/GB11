@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b80f0p5bya0v0"]
+
+[ext_resource type="PackedScene" uid="uid://bc7qqtobp4uo3" path="res://scenes/objects/furniture/Bed.tscn" id="1_tb7cn"]
+
+[node name="furniture_stage_0" type="Node2D"]
+
+[node name="Furniture2x2" parent="." instance=ExtResource("1_tb7cn")]
+position = Vector2(281, -154)
+
+[node name="Furniture2x3" parent="." instance=ExtResource("1_tb7cn")]
+position = Vector2(59, -203)
+
+[node name="Furniture2x4" parent="." instance=ExtResource("1_tb7cn")]
+position = Vector2(211, -227)
