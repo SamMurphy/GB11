@@ -5,6 +5,7 @@ extends ColorRect
 var textBoxLimit = 20
 
 signal next_dialogue
+signal dialogue_finished
 
 func _ready():
 	$Timer.wait_time = text_speed as float
@@ -51,6 +52,7 @@ func _sayDialogue(name: String, description: String):
 		currentCharCount = 0
 		$Button.hide()
 	hideAll()
+	dialogue_finished.emit()
 			
 	return
 	

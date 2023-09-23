@@ -6,12 +6,18 @@ var movement
 
 var currentFurniture : Node2D
 
-@onready var anim = get_node("AnimationPlayer")
+var inDialogue = false
 
+@onready var anim = get_node("AnimationPlayer")
+@onready var interact = get_node("DialogueInteraction").get_node("CanvasLayer").get_node("BoxOfWords")
+
+func on_dialogue_finish():
+	inDialogue = false
 
 func _ready():
 	anim.play("idle")
 	movement = get_node("Movement")
+	interact.dialogue_finished.connect(on_dialogue_finish)
 
 func _physics_process(delta):
 	
@@ -22,10 +28,11 @@ func _physics_process(delta):
 	if xDirection != 0 || yDirection != 0:
 		if Input.is_action_pressed("A") && is_instance_valid(currentFurniture):
 			currentFurniture._push(Vector2(xDirection, yDirection))
-	elif Input.is_action_just_pressed("A") && is_instance_valid(currentFurniture):
+	elif Input.is_action_just_pressed("A") && is_instance_valid(currentFurniture) && !inDialogue:
 		currentFurniture._rotate()
 	
 	if Input.is_action_just_pressed("B") && is_instance_valid(currentFurniture):
+		inDialogue = true
 		currentFurniture.activateDialogue()
 	
 	# Cast a ray to make sure there isn't anything in front of us	
