@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://br28a1qrglh8s"
-path="res://.godot/imported/Djungelskog.png-b601c8971ced5bf9f9d41f87979deade.ctex"
+path="res://.godot/imported/Bear.png-1dac9d2a9e1d07f42dc78e3eee7f3475.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Furniture/Bear/Djungelskog.png"
-dest_files=["res://.godot/imported/Djungelskog.png-b601c8971ced5bf9f9d41f87979deade.ctex"]
+source_file="res://assets/textures/Furniture/Bear/Bear.png"
+dest_files=["res://.godot/imported/Bear.png-1dac9d2a9e1d07f42dc78e3eee7f3475.ctex"]
 
 [params]
 
