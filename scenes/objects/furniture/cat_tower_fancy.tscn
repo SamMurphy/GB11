@@ -1,17 +1,20 @@
-[gd_scene load_steps=15 format=3 uid="uid://bwd7m6dc5bfx4"]
+[gd_scene load_steps=18 format=3 uid="uid://cthnuomohe117"]
 
-[ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_qey62"]
-[ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_2lyrd"]
-[ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="3_kbicg"]
-[ext_resource type="Texture2D" uid="uid://dcph706nmnmqb" path="res://assets/textures/Furniture/Bedside Table/BedsideTable.png" id="4_jyq01"]
-[ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="5_di0e5"]
-[ext_resource type="PackedScene" path="res://scenes/objects/FurnitureCommon.tscn" id="6_lknrq"]
+[ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_n4874"]
+[ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_65d2r"]
+[ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="3_bst2p"]
+[ext_resource type="Texture2D" uid="uid://dd6dv63s2qi68" path="res://assets/textures/Furniture/Cat Tower/CatTowerFancyBack.png" id="4_4brb5"]
+[ext_resource type="Texture2D" uid="uid://dn44k1c4ythqg" path="res://assets/textures/Furniture/Cat Tower/CatTowerFancy.png" id="5_o5k8i"]
+[ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="6_588v5"]
+[ext_resource type="Texture2D" uid="uid://dbcnxxm4mkmn2" path="res://assets/textures/Furniture/Cat Tower/CatTowerFancyLeft.png" id="6_bippd"]
+[ext_resource type="PackedScene" path="res://scenes/objects/FurnitureCommon.tscn" id="7_0wvrx"]
+[ext_resource type="Texture2D" uid="uid://c6ms5gmokvse6" path="res://assets/textures/Furniture/Cat Tower/CatTowerFancyRight.png" id="7_ofyto"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nb45i"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_kbicg")
+"texture": ExtResource("3_bst2p")
 }],
 "loop": true,
 "name": &"active",
@@ -19,7 +22,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_jyq01")
+"texture": ExtResource("4_4brb5")
 }],
 "loop": true,
 "name": &"back",
@@ -27,7 +30,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_jyq01")
+"texture": ExtResource("5_o5k8i")
 }],
 "loop": true,
 "name": &"front",
@@ -35,7 +38,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_jyq01")
+"texture": ExtResource("6_bippd")
 }],
 "loop": true,
 "name": &"left",
@@ -43,7 +46,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_jyq01")
+"texture": ExtResource("7_ofyto")
 }],
 "loop": true,
 "name": &"right",
@@ -137,13 +140,14 @@ _data = {
 "right": SubResource("Animation_oml8v")
 }
 
-[node name="Furniture1x1" type="CharacterBody2D" groups=["bedroom_item", "furniture"]]
-script = ExtResource("1_qey62")
-fancy_name = "Bedside table"
-description = "You can put your smartphone here! Wait, what's a smartphone?"
+[node name="Furniture1x1" type="CharacterBody2D" groups=["any_item", "furniture"]]
+script = ExtResource("1_n4874")
+fancy_name = "Cat Tower"
+description = "Smells like cats!"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-material = ExtResource("2_2lyrd")
+material = ExtResource("2_65d2r")
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_nb45i")
 animation = &"front"
 
@@ -156,6 +160,6 @@ libraries = {
 }
 
 [node name="Movement" type="Node" parent="."]
-script = ExtResource("5_di0e5")
+script = ExtResource("6_588v5")
 
-[node name="FurnitureCommon" parent="." instance=ExtResource("6_lknrq")]
+[node name="FurnitureCommon" parent="." instance=ExtResource("7_0wvrx")]
