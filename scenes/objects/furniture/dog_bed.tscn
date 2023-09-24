@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d1yt6yms5jss0"]
+[gd_scene load_steps=19 format=3 uid="uid://ojaqhde2ty8o"]
 
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_20qe2"]
 [ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_jxfy8"]
@@ -383,7 +383,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqfba"]
 size = Vector2(15, 15)
 
-[node name="Furniture2x1" type="StaticBody2D" groups=["furniture"]]
+[node name="Furniture2x1" type="CharacterBody2D" groups=["furniture"]]
 script = ExtResource("1_20qe2")
 fancy_name = "Dog bed"
 description = "A dog might sleep here."

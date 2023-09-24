@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_5p6b8"]
 [ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="2_7rxia"]
-[ext_resource type="Material" uid="uid://d140yq8lirhjr" path="res://assets/shaders/Furniture.tres" id="2_7wjtc"]
+[ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_7wjtc"]
 [ext_resource type="Texture2D" uid="uid://gvbx5norc6fv" path="res://assets/textures/REPLACE_ME/Furniture/Drawers.png" id="3_x2wix"]
-[ext_resource type="PackedScene" uid="uid://bkkyab6rbqee3" path="res://scenes/objects/FurnitureCommon.tscn" id="6_sdcmt"]
+[ext_resource type="PackedScene" path="res://scenes/objects/FurnitureCommon.tscn" id="6_sdcmt"]
 [ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="7_wdaov"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nb45i"]
@@ -137,7 +137,7 @@ _data = {
 "right": SubResource("Animation_oml8v")
 }
 
-[node name="Furniture1x1" type="StaticBody2D" groups=["furniture"]]
+[node name="Furniture1x1" type="CharacterBody2D" groups=["furniture"]]
 script = ExtResource("1_5p6b8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
