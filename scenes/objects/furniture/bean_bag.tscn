@@ -1,11 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://ddihq6waba53l"]
+[gd_scene load_steps=18 format=3 uid="uid://ddihq6waba53l"]
 
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_cbai3"]
 [ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_f2oro"]
 [ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="3_6gayb"]
 [ext_resource type="Texture2D" uid="uid://bkwc8qda3cixa" path="res://assets/textures/Furniture/Bean Bag/BeanBag.png" id="4_8kq2l"]
+[ext_resource type="Texture2D" uid="uid://5d8nmofywa4y" path="res://assets/textures/Furniture/Bean Bag/BeanBagBack.png" id="4_nj2q6"]
 [ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="5_3wniy"]
 [ext_resource type="PackedScene" path="res://scenes/objects/FurnitureCommon.tscn" id="6_5ifpu"]
+[ext_resource type="Texture2D" uid="uid://dx3fa0h0tbag6" path="res://assets/textures/Furniture/Bean Bag/BeanBagSide.png" id="6_w071j"]
+[ext_resource type="Texture2D" uid="uid://cjuhpfchtowxb" path="res://assets/textures/Furniture/Bean Bag/BeanBagRight.png" id="7_tc21l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nb45i"]
 animations = [{
@@ -19,7 +22,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_8kq2l")
+"texture": ExtResource("4_nj2q6")
 }],
 "loop": true,
 "name": &"back",
@@ -35,7 +38,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_8kq2l")
+"texture": ExtResource("6_w071j")
 }],
 "loop": true,
 "name": &"left",
@@ -43,7 +46,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_8kq2l")
+"texture": ExtResource("7_tc21l")
 }],
 "loop": true,
 "name": &"right",
