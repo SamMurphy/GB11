@@ -53,7 +53,10 @@ func _physics_process(delta):
 	else:
 		var col = physicsBody2D.move_and_collide(physicsBody2D.velocity * delta)
 		if col:
-			if col.get_collider().name != "player" && !physicsBody2D.is_in_group("furniture"):
+			var resetPos = true
+			if col.get_collider().name == "player" && physicsBody2D.is_in_group("furniture"):
+				resetPos = false			
+			if resetPos:
 				targetPosition = lastSafeTarget
 
 # This will only work if we've already reached our target
