@@ -34,9 +34,11 @@ func _restart_timer(min, max):
 		$Timer.wait_time = randi_range(min, max)
 		$Timer.start()	
 		
-func _random_transition(state_list : Array):
-	state_list.shuffle()
-	next_state = state_list.front()
+func _random_transition():
+	# Make the states weighted!
+	var state_list = CatState.values()
+	state_list.erase(current_state)
+	next_state = state_list.pick_random()
 	
 @export var idle_min = 5
 @export var idle_max = 10
@@ -47,7 +49,7 @@ func _update_idle(is_start):
 		self._restart_timer(idle_min, idle_max)
 		
 	if $Timer.is_stopped():
-		_random_transition([CatState.SLEEP, CatState.RANDOM_MOVE])
+		_random_transition()
 	
 @export var sleep_min = 30
 @export var sleep_max = 60
@@ -58,10 +60,10 @@ func _update_sleep(is_start):
 		self._restart_timer(sleep_min, sleep_max)
 		
 	if $Timer.is_stopped():
-		_random_transition([CatState.IDLE, CatState.RANDOM_MOVE])
+		_random_transition()
 		
 @export var random_move_min = 5
-@export var random_move_max = 10		
+@export var random_move_max = 10
 
 func _update_random_move(is_start):
 	if is_start:
@@ -71,7 +73,7 @@ func _update_random_move(is_start):
 	_move_random()
 	
 	if $Timer.is_stopped():
-		_random_transition([CatState.IDLE, CatState.SLEEP])
+		_random_transition()
 	
 func _move_random():
 	var move_funcs : Array[Callable] = [
