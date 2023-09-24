@@ -137,7 +137,7 @@ _data = {
 "right": SubResource("Animation_oml8v")
 }
 
-[node name="Furniture1x1" type="CharacterBody2D" groups=["bedroom_item", "furniture"]]
+[node name="Furniture1x1" type="CharacterBody2D" groups=["any_item", "furniture"]]
 script = ExtResource("1_qey62")
 fancy_name = "Bedside table"
 description = "You can put your smartphone here! Wait, what's a smartphone?"
