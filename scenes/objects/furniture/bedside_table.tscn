@@ -1,11 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://bwd7m6dc5bfx4"]
+[gd_scene load_steps=18 format=3 uid="uid://de8aceqq2xgmq"]
 
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_qey62"]
 [ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_2lyrd"]
 [ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="3_kbicg"]
 [ext_resource type="Texture2D" uid="uid://dcph706nmnmqb" path="res://assets/textures/Furniture/Bedside Table/BedsideTable.png" id="4_jyq01"]
+[ext_resource type="Texture2D" uid="uid://b0w8u0nnfe52o" path="res://assets/textures/Furniture/Bedside Table/BedsideTableBack.png" id="4_r5pa5"]
 [ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="5_di0e5"]
+[ext_resource type="Texture2D" uid="uid://frcun233s788" path="res://assets/textures/Furniture/Bedside Table/BedsideTableLeft.png" id="6_fs5qx"]
 [ext_resource type="PackedScene" path="res://scenes/objects/FurnitureCommon.tscn" id="6_lknrq"]
+[ext_resource type="Texture2D" uid="uid://c0oi3dsh5umgg" path="res://assets/textures/Furniture/Bedside Table/BedsideTableRight.png" id="7_kmeg4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nb45i"]
 animations = [{
@@ -19,7 +22,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_jyq01")
+"texture": ExtResource("4_r5pa5")
 }],
 "loop": true,
 "name": &"back",
@@ -35,7 +38,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_jyq01")
+"texture": ExtResource("6_fs5qx")
 }],
 "loop": true,
 "name": &"left",
@@ -43,7 +46,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_jyq01")
+"texture": ExtResource("7_kmeg4")
 }],
 "loop": true,
 "name": &"right",
@@ -137,11 +140,12 @@ _data = {
 "right": SubResource("Animation_oml8v")
 }
 
-[node name="Furniture1x1" type="CharacterBody2D" groups=["bedroom_item", "furniture"]]
+[node name="Furniture1x1" type="CharacterBody2D" groups=["any_item", "furniture"]]
 script = ExtResource("1_qey62")
 fancy_name = "Bedside table"
 description = "You can put your smartphone here! Wait, what's a smartphone?"
-weight = 1.0
+weight = 0.75
+proximity_furniture_groups = Array[String](["bed"])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = ExtResource("2_2lyrd")
