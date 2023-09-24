@@ -13,6 +13,7 @@ var inDialogue = false
 @onready var anim = get_node("AnimationPlayer")
 @onready var interact = get_node("DialogueInteraction").get_node("CanvasLayer").get_node("BoxOfWords")
 @onready var endGameInteract = get_node("EndDayInteraction").get_node("CanvasLayer").get_node("BoxOfWords")
+var transition_tween
 
 @export var held_time : float = 0.25
 var a_press : bool = false
@@ -29,10 +30,18 @@ func on_dialogue_finish():
 func on_end_day_dialog_finish(is_day_ended : bool):
 	if is_day_ended:
 		#trigger end day on level
-		position = spawn_point   
-		movement.targetPosition = spawn_point
-		get_parent()._load_next_stage()
+		if transition_tween:
+			transition_tween.kill() # Abort the previous animation.
+		transition_tween = create_tween()
+		transition_tween.tween_method(GameGlobals.change_fade_time, 0.0, 1.0, 1.0)#.set_trans(Tween.TRANS_BOUNCE)
+		transition_tween.tween_callback(load_next_stage)
+		transition_tween.tween_method(GameGlobals.change_fade_time, 1.0, 0.0, 1.0)#.set_trans(Tween.TRANS_BOUNCE
 		return
+
+func load_next_stage():
+	position = spawn_point   
+	movement.targetPosition = spawn_point
+	get_parent()._load_next_stage()
 
 func _ready():
 	anim.play("idle")

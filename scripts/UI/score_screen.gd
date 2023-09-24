@@ -16,6 +16,8 @@ func _ready():
 		var format_score = "%.3f seconds!"
 		var score_string = format_score % [GameGlobals.Score]
 		score_lbl.text = score_string
+	var tween = create_tween()
+	tween.tween_method(GameGlobals.change_fade_time, 1.0, 0.0, 1.0)#.set_trans(Tween.TRANS_BOUNCE
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
