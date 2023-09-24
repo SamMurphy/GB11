@@ -41,8 +41,6 @@ func _input(ev):
 			$Yes.hide()
 			$No.hide()
 			$Selected.hide()
-			var savedSize = self.size
-			var savedPos = self.position
 			self.size = Vector2(120,60)
 			self.position = Vector2(20, 50)
 			$CantEnd.show()
@@ -52,8 +50,6 @@ func _input(ev):
 			hideAll()
 			dialogue_finished.emit()
 			popup.emit()
-			self.size = savedSize
-			self.position = savedPos
 		else:
 			choice.emit(endDay)
 			hideAll()
@@ -69,6 +65,8 @@ func _update_end_day(end: bool):
 func _endDayInteract():
 	var currentCharCount = 0
 	var totalCharCount = 0
+	self.size = Vector2(120,35)
+	self.position = Vector2(20, 100)
 	$EndDay.visible_characters = 0
 	$Yes.show()
 	$No.show()
