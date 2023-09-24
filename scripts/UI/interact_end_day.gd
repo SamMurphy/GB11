@@ -11,6 +11,7 @@ var can_end_day = false
 
 signal choice
 signal dialogue_finished
+signal popup
 var endDay = false
 
 func _ready():
@@ -36,12 +37,23 @@ func _input(ev):
 		select.set_position(Vector2(58, 26))
 	if Input.is_action_just_pressed("A") && is_visible():
 		if (!can_end_day && endDay):
+			$EndDay.hide()
+			$Yes.hide()
+			$No.hide()
+			$Selected.hide()
+			var savedSize = self.size
+			var savedPos = self.position
+			self.size = Vector2(120,60)
+			self.position = Vector2(20, 50)
 			$CantEnd.show()
 			print("Can't end day!")
 			$EndTimer.start()
 			await($EndTimer.timeout)
 			hideAll()
 			dialogue_finished.emit()
+			popup.emit()
+			self.size = savedSize
+			self.position = savedPos
 		else:
 			choice.emit(endDay)
 			hideAll()

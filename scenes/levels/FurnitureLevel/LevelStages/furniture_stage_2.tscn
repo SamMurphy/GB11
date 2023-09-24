@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://drs25fjsg8pk8"]
+[gd_scene load_steps=7 format=3 uid="uid://drs25fjsg8pk8"]
 
 [ext_resource type="PackedScene" uid="uid://w61o2xj6nfjl" path="res://scenes/objects/furniture/dining_chair.tscn" id="1_eh5j7"]
 [ext_resource type="PackedScene" uid="uid://4xscfjeqhf04" path="res://scenes/objects/furniture/dining_table.tscn" id="2_08xan"]
 [ext_resource type="PackedScene" uid="uid://hedu6c765hly" path="res://scenes/objects/furniture/kallax.tscn" id="3_siwmy"]
 [ext_resource type="PackedScene" uid="uid://k43x66ppu5v8" path="res://scenes/objects/furniture/chest_of_drawers.tscn" id="3_uyaw3"]
-[ext_resource type="PackedScene" path="res://scenes/objects/furniture/Desk.tscn" id="5_klelu"]
+[ext_resource type="PackedScene" uid="uid://6oeeopr0sp8w" path="res://scenes/objects/furniture/Desk.tscn" id="5_klelu"]
+[ext_resource type="PackedScene" uid="uid://qwlglajb6sco" path="res://scenes/objects/Furniture_Templates/BBQ.tscn" id="6_vdver"]
 
 [node name="furniture_stage_0" type="Node2D"]
 y_sort_enabled = true
@@ -33,3 +34,6 @@ position = Vector2(120, -112)
 
 [node name="Furniture2x4" parent="." instance=ExtResource("5_klelu")]
 position = Vector2(48, -112)
+
+[node name="Furniture2x5" parent="." instance=ExtResource("6_vdver")]
+position = Vector2(48, -89)
