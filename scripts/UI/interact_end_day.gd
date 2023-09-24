@@ -35,17 +35,18 @@ func _input(ev):
 		endDay = false
 		select.set_position(Vector2(58, 26))
 	if Input.is_action_just_pressed("A") && is_visible():
-		if (can_end_day):
-			choice.emit(endDay)
-			hideAll()
-			dialogue_finished.emit()
-		else:
+		if (!can_end_day && endDay):
 			$CantEnd.show()
 			print("Can't end day!")
 			$EndTimer.start()
 			await($EndTimer.timeout)
 			hideAll()
 			dialogue_finished.emit()
+		else:
+			choice.emit(endDay)
+			hideAll()
+			dialogue_finished.emit()
+
 			
 func _display_cant_end():
 	pass
