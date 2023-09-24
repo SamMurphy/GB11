@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmcnmrpn41fdn"]
+[gd_scene load_steps=3 format=3 uid="uid://dmcnmrpn41fdn"]
 
-[ext_resource type="PackedScene" uid="uid://epid68sblcf0" path="res://scenes/objects/furniture/moving_box.tscn" id="1_014qa"]
+[ext_resource type="PackedScene" uid="uid://cr1jscdnfvdeb" path="res://scenes/objects/furniture/moving_box.tscn" id="1_014qa"]
+[ext_resource type="PackedScene" uid="uid://c142aqxppl5if" path="res://scenes/objects/furniture/armchair.tscn" id="2_y5mhb"]
 
 [node name="furniture_stage_5" type="Node2D"]
 y_sort_enabled = true
@@ -10,3 +11,10 @@ position = Vector2(31, -119)
 
 [node name="Furniture1x2" parent="." instance=ExtResource("1_014qa")]
 position = Vector2(72, -112)
+
+[node name="Furniture1x3" parent="." instance=ExtResource("2_y5mhb")]
+position = Vector2(61, -139)
+description = "Smells musty"
+
+[node name="Furniture1x4" parent="." instance=ExtResource("2_y5mhb")]
+position = Vector2(80, -139)
