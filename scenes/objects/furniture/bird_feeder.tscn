@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://mddj28kqqs58"]
+[gd_scene load_steps=16 format=3 uid="uid://b73bip3ml5f8n"]
 
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_0fy5g"]
 [ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_20wye"]
@@ -138,7 +138,7 @@ _data = {
 "right": SubResource("Animation_oml8v")
 }
 
-[node name="Furniture1x1" type="CharacterBody2D" groups=["furniture"]]
+[node name="Furniture1x1" type="CharacterBody2D" groups=["furniture", "garden_item"]]
 script = ExtResource("1_0fy5g")
 fancy_name = "Bird Feeder"
 description = "Hopefully some nice blue tits will come to stay"

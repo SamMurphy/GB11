@@ -4,11 +4,17 @@ extends ColorRect
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	game_scorer.player_position.connect(_update_player_location)
+	game_scorer.player_score.connect(_update_player_score)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _update_player_location(pos: String):
-	print("Changing player position to: ", pos)
 	$Room.bbcode_text = "[center]" + pos
-	pass
+
+func _update_player_score(score: int, total: int):
+	if (total == 0):
+		$Count.bbcode_text = "No items"
+	else:
+		$Count.bbcode_text = str(score) + " of " + str(total)
+	
