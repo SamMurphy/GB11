@@ -4,9 +4,10 @@ extends ColorRect
 
 var textBoxLimit = 20
 
-
+var can_end_day = false
 
 @onready var select = get_node("Selected")
+@onready var game_scorer = get_node("../../../../game_scorer")
 
 signal choice
 signal dialogue_finished
@@ -14,12 +15,14 @@ var endDay = false
 
 func _ready():
 	$Timer.wait_time = text_speed as float
+	game_scorer.can_scene_end.connect(_update_end_day)
 	hideAll()
 
 func hideAll():
 	$EndDay.hide()
 	$Yes.hide()
 	$No.hide()
+	$CantEnd.hide()
 	self.hide()
 
 func _input(ev):
@@ -32,10 +35,23 @@ func _input(ev):
 		endDay = false
 		select.set_position(Vector2(58, 26))
 	if Input.is_action_just_pressed("A") && is_visible():
-		choice.emit(endDay)
-		print(endDay)
-		hideAll()
-		dialogue_finished.emit()
+		if (can_end_day):
+			choice.emit(endDay)
+			hideAll()
+			dialogue_finished.emit()
+		else:
+			$CantEnd.show()
+			print("Can't end day!")
+			$EndTimer.start()
+			await($EndTimer.timeout)
+			hideAll()
+			dialogue_finished.emit()
+			
+func _display_cant_end():
+	pass
+
+func _update_end_day(end: bool):
+	can_end_day = end
 	
 func _endDayInteract():
 	var currentCharCount = 0

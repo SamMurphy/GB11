@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://lnhd87bas5kt"]
+
+[ext_resource type="Texture2D" uid="uid://ch0mu2jg7ie5f" path="res://assets/textures/Animations/Van Idle/OkeoVanAnim.png" id="1_d5rbx"]
+[ext_resource type="Script" path="res://scripts/npcs/Van.gd" id="1_kj0fr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4urd"]
+size = Vector2(80, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtl33"]
+atlas = ExtResource("1_d5rbx")
+region = Rect2(0, 0, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h46se"]
+atlas = ExtResource("1_d5rbx")
+region = Rect2(96, 0, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyrxu"]
+atlas = ExtResource("1_d5rbx")
+region = Rect2(192, 0, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ceaid"]
+atlas = ExtResource("1_d5rbx")
+region = Rect2(288, 0, 96, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6vpc7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtl33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h46se")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyrxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ceaid")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Van" type="CharacterBody2D"]
+position = Vector2(320, -186)
+script = ExtResource("1_kj0fr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 3.5)
+shape = SubResource("RectangleShape2D_d4urd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6vpc7")
+frame_progress = 0.678165

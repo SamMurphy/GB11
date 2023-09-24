@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bk1dsubd5jktq" path="res://scenes/objects/furniture/bean_bag.tscn" id="2_ln4g6"]
 
 [node name="furniture_stage_0" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Furniture1x1" parent="." instance=ExtResource("1_1rya0")]
 position = Vector2(37, -54)

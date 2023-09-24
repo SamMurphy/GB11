@@ -142,6 +142,9 @@ _data = {
 script = ExtResource("1_hd7uj")
 fancy_name = "Floor Lamp"
 description = "Makes reading easier."
+weight = 0.3
+proximity_furniture_range = 50
+proximity_furniture_groups = Array[String](["sofa", "chair"])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = ExtResource("2_ithn6")

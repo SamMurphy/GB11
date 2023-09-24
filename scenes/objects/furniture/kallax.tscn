@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cpqu42p14agx"]
+[gd_scene load_steps=18 format=3 uid="uid://hedu6c765hly"]
 
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_85xkt"]
 [ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_ha564"]
@@ -382,11 +382,11 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqfba"]
 size = Vector2(15, 15)
 
-[node name="Furniture2x1" type="CharacterBody2D" groups=["furniture", "lvingroom_item"]]
+[node name="Furniture2x1" type="CharacterBody2D" groups=["any_item", "furniture"]]
 script = ExtResource("1_85xkt")
 fancy_name = "Skrillex"
 description = "Multi-functional storage item!"
-weight = 2.0
+weight = 1.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = ExtResource("2_ha564")
