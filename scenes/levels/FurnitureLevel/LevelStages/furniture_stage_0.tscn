@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b55a6wx53ot55"]
+[gd_scene load_steps=5 format=3 uid="uid://b55a6wx53ot55"]
 
 [ext_resource type="PackedScene" uid="uid://dl4kovmljkyhk" path="res://scenes/objects/furniture/bear.tscn" id="1_1rya0"]
 [ext_resource type="PackedScene" uid="uid://ddihq6waba53l" path="res://scenes/objects/furniture/bean_bag.tscn" id="2_ln4g6"]
 [ext_resource type="PackedScene" uid="uid://dtdtw0do4ck6v" path="res://scenes/objects/furniture/Fridge.tscn" id="3_q7rei"]
+[ext_resource type="PackedScene" uid="uid://dnde2juyd15l3" path="res://scenes/objects/furniture/bookcase_notempty.tscn" id="4_5h7qm"]
 
 [node name="furniture_stage_0" type="Node2D"]
 y_sort_enabled = true
@@ -16,3 +17,6 @@ position = Vector2(69, -75)
 
 [node name="Furniture1x3" parent="." instance=ExtResource("3_q7rei")]
 position = Vector2(93, -75)
+
+[node name="Furniture1x4" parent="." instance=ExtResource("4_5h7qm")]
+position = Vector2(112, -75)
