@@ -17,8 +17,6 @@ extends PhysicsBody2D
 @export var proximity_furniture_range : int = 64
 @export var proximity_furniture_base_score : int = 3
 @export var proximity_furniture_groups : Array[String]
-@export var room_bonus : String
-@export var room_bonus_score : int = 5
 
 @onready var movement = get_node("Movement")
 @onready var sprite = get_node("AnimatedSprite2D")

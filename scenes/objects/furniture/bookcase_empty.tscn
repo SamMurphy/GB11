@@ -1,12 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://dwl7k331g5olp"]
+[gd_scene load_steps=18 format=3 uid="uid://dnde2juyd15l3"]
 
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_038pa"]
 [ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_c8q1j"]
 [ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="3_d8v4n"]
-[ext_resource type="Texture2D" uid="uid://bq0bq538024ek" path="res://assets/textures/REPLACE_ME/Furniture/Drawers.png" id="4_65sku"]
+[ext_resource type="Texture2D" uid="uid://cjwxiu4but2e2" path="res://assets/textures/Furniture/Bookcase/BookcaseBack.png" id="4_rhnr1"]
 [ext_resource type="Texture2D" uid="uid://c6vf1neb0pr85" path="res://assets/textures/Furniture/Bookcase/BookcaseEmpty.png" id="5_lxy78"]
 [ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="5_m5aj4"]
 [ext_resource type="PackedScene" path="res://scenes/objects/FurnitureCommon.tscn" id="6_g7uiy"]
+[ext_resource type="Texture2D" uid="uid://dmkt07h58e6fb" path="res://assets/textures/Furniture/Bookcase/BookcaseLeft.png" id="6_mb3qu"]
+[ext_resource type="Texture2D" uid="uid://dmf00k1xn322o" path="res://assets/textures/Furniture/Bookcase/BookcaseRight.png" id="7_q7v0c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nb45i"]
 animations = [{
@@ -20,7 +22,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_65sku")
+"texture": ExtResource("4_rhnr1")
 }],
 "loop": true,
 "name": &"back",
@@ -29,9 +31,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("5_lxy78")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_65sku")
 }],
 "loop": true,
 "name": &"front",
@@ -39,7 +38,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_65sku")
+"texture": ExtResource("6_mb3qu")
 }],
 "loop": true,
 "name": &"left",
@@ -47,7 +46,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_65sku")
+"texture": ExtResource("7_q7v0c")
 }],
 "loop": true,
 "name": &"right",
@@ -141,11 +140,15 @@ _data = {
 "right": SubResource("Animation_oml8v")
 }
 
-[node name="Furniture1x1" type="CharacterBody2D" groups=["furniture", "livingroom_item"]]
+[node name="Furniture1x1" type="CharacterBody2D" groups=["any_item", "furniture"]]
 script = ExtResource("1_038pa")
+fancy_name = "Bookshelf"
+description = "Somewhere to store all the books I won't read"
+weight = 0.75
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = ExtResource("2_c8q1j")
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_nb45i")
 animation = &"front"
 

@@ -142,7 +142,7 @@ _data = {
 script = ExtResource("1_rqmp5")
 fancy_name = "Djunkelskog"
 description = "Your trustworthy companion!"
-weight = 0.1
+weight = 0.2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = ExtResource("2_7pjdo")
