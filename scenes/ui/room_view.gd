@@ -7,6 +7,7 @@ var count_enabled = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	game_scorer.player_position.connect(_update_player_location)
+	game_scorer.player_score.connect(_update_player_score)
 	end_game.popup.connect(_enable_popup)
 	
 func _enable_popup():
