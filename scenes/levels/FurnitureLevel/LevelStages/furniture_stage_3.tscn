@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://1kb7hnq3psbf"]
+[gd_scene load_steps=5 format=3 uid="uid://1kb7hnq3psbf"]
 
 [ext_resource type="PackedScene" uid="uid://wp587bl6124w" path="res://scenes/objects/furniture/sofa_fancy.tscn" id="1_irue0"]
 [ext_resource type="PackedScene" uid="uid://mddj28kqqs58" path="res://scenes/objects/furniture/bird_feeder.tscn" id="2_vsian"]
+[ext_resource type="PackedScene" uid="uid://bkxl4quw2qp25" path="res://scenes/objects/furniture/dog_house.tscn" id="3_djs3v"]
+[ext_resource type="PackedScene" uid="uid://qwlglajb6sco" path="res://scenes/objects/Furniture_Templates/BBQ.tscn" id="4_qqiap"]
 
 [node name="furniture_stage_3" type="Node2D"]
 y_sort_enabled = true
@@ -12,3 +14,9 @@ position = Vector2(48, -80)
 
 [node name="Furniture1x1" parent="." instance=ExtResource("2_vsian")]
 position = Vector2(70, -70)
+
+[node name="Furniture1x2" parent="." instance=ExtResource("3_djs3v")]
+position = Vector2(86, -89)
+
+[node name="Furniture2x5" parent="." instance=ExtResource("4_qqiap")]
+position = Vector2(49, -102)
