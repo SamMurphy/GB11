@@ -35,6 +35,7 @@ func _input(ev):
 		choice.emit(endDay)
 		print(endDay)
 		hideAll()
+		await get_tree().create_timer(2.0).timeout
 		dialogue_finished.emit()
 	
 func _endDayInteract():
