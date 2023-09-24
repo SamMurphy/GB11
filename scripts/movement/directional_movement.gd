@@ -55,7 +55,7 @@ func _physics_process(delta):
 		if col:
 			var resetPos = true
 			if col.get_collider().name == "player" && physicsBody2D.is_in_group("furniture"):
-				resetPos = false			
+				resetPos = false
 			if resetPos:
 				targetPosition = lastSafeTarget
 

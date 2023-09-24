@@ -43,8 +43,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if can_push == false && movement._is_at_target_position() == false && move_timer.is_stopped():
-			move_timer.start(time_to_push)
+	pass
 
 func _entered_area():
 	pass
@@ -74,6 +73,7 @@ func _rotate():
 
 func _push(direction : Vector2) -> bool:
 	if last_direction_pushed != direction:
+		move_timer.stop()
 		can_push = true
 	
 	if can_push == false:
@@ -91,14 +91,19 @@ func _push(direction : Vector2) -> bool:
 	elif direction.y > 0:
 		movement._move_up()
 
-	if movement._is_at_target_position() == false:
+	if movement._is_at_target_position() == false && move_timer.is_stopped():
 		can_push = false
+		move_timer.start(time_to_push)
 		
 	last_direction_pushed = direction
 	return true
+	
+func _release_furniture():
+	can_push = true
+	move_timer.stop()
 
 func _on_move_timer_timeout():
-	can_push = true
+	can_push = true 
 
 func _on_collision_checker_body_entered(body):
 	if body != self:
