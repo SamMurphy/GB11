@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tnfc5"]
 [ext_resource type="Shader" path="res://assets/shaders/postfx/transition.gdshader" id="2_0vfgl"]
 [ext_resource type="Texture2D" uid="uid://dlb4bdqx0qb7e" path="res://assets/textures/postfx/bayer_pattern.png" id="2_5stho"]
-[ext_resource type="PackedScene" uid="uid://b0l6mdj82svm0" path="res://scenes/MusicScene.tscn" id="2_cnc7r"]
+[ext_resource type="PackedScene" path="res://scenes/MusicScene.tscn" id="2_cnc7r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ie128"]
 shader = ExtResource("2_0vfgl")
