@@ -13,8 +13,5 @@ func _update_player_location(pos: String):
 	$Room.bbcode_text = "[center]" + pos
 
 func _update_player_score(score: int, total: int):
-	if (total == 0):
-		$Count.bbcode_text = "No items"
-	else:
-		$Count.bbcode_text = str(score) + " of " + str(total)
+	$Count.bbcode_text = str(score) + " of " + str(total) + " required"
 	
