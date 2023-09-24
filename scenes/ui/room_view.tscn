@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://dywkuex28s440"]
+
+[ext_resource type="FontFile" uid="uid://i2j4rgkrw7xr" path="res://assets/fonts/AtariGames.ttf" id="1_h5hca"]
+[ext_resource type="Script" path="res://scenes/ui/room_view.gd" id="1_jcx55"]
+
+[node name="room_view" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_top = 5.0
+offset_right = -10.0
+offset_bottom = 25.0
+grow_horizontal = 0
+script = ExtResource("1_jcx55")
+
+[node name="Room" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 79.0
+offset_bottom = 20.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_h5hca")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "Bedroom"
+scroll_active = false

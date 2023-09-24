@@ -23,6 +23,12 @@ func _load_next_stage():
 			if bin.is_in_group("furniture"):
 				bin.queue_free()
 		
+		# Scoring
+		var score = 0
+		var all_furniture = get_tree().get_nodes_in_group("furniture")
+		for furniture in all_furniture:
+			score += furniture._get_total_score()
+		
 		var scene_to_load = ResourceLoader.load(scenes[current_level_stage])
 		var loaded_scene = scene_to_load.instantiate()
 		self.add_child(loaded_scene)
