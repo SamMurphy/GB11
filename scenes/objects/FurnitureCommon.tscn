@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bkkyab6rbqee3"]
 
-[ext_resource type="AudioStream" uid="uid://ca5msbwmo3v6x" path="res://assets/sounds/error.wav" id="1_78u2j"]
+[ext_resource type="AudioStream" uid="uid://hpev73fu2bvd" path="res://assets/sounds/error2.mp3" id="1_uf2t1"]
 
 [node name="FurnitureCommon" type="Node2D"]
 
@@ -8,4 +8,5 @@
 one_shot = true
 
 [node name="ErrorSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_78u2j")
+stream = ExtResource("1_uf2t1")
+bus = &"SFX"
