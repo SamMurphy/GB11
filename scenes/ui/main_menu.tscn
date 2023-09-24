@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://iuphverfkkxq"]
+[gd_scene load_steps=11 format=3 uid="uid://iuphverfkkxq"]
 
 [ext_resource type="Script" path="res://scripts/UI/main_menu.gd" id="1_3duqm"]
 [ext_resource type="FontFile" uid="uid://i2j4rgkrw7xr" path="res://assets/fonts/AtariGames.ttf" id="1_4o5vo"]
 [ext_resource type="Script" path="res://scripts/UI/main_menu_animation.gd" id="1_s0b5a"]
-[ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="2_c06wn"]
 [ext_resource type="PackedScene" uid="uid://babfgmqbih0pv" path="res://scenes/objects/bg.tscn" id="2_hpmuq"]
+[ext_resource type="Texture2D" uid="uid://dxwtxs5g1ybkv" path="res://assets/textures/title_van.png" id="5_mg43v"]
+[ext_resource type="LabelSettings" uid="uid://bxkghsplgb5t" path="res://assets/labelsetting.tres" id="6_sbl7i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s60oj"]
 font = ExtResource("1_4o5vo")
@@ -72,11 +73,24 @@ label_settings = SubResource("LabelSettings_s60oj")
 horizontal_alignment = 1
 
 [node name="logo" type="Sprite2D" parent="UI"]
-position = Vector2(83, 57)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_c06wn")
+position = Vector2(80, 64)
+texture = ExtResource("5_mg43v")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI"]
 libraries = {
 "": SubResource("AnimationLibrary_wv1u5")
 }
+
+[node name="Node2D" type="Node2D" parent="UI"]
+scale = Vector2(1.5, 1.5)
+
+[node name="title_txt" type="Label" parent="UI/Node2D"]
+offset_left = 25.3333
+offset_top = 21.3333
+offset_right = 108.333
+offset_bottom = 61.3333
+text = "Sofa 
+So Good"
+label_settings = ExtResource("6_sbl7i")
+horizontal_alignment = 1
+vertical_alignment = 1
