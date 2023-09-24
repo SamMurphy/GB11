@@ -1,13 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://1kb7hnq3psbf"]
 
-[ext_resource type="PackedScene" uid="uid://dvck0w5cxnsg3" path="res://scenes/objects/furniture/sofa_fancy.tscn" id="1_irue0"]
-[ext_resource type="PackedScene" uid="uid://b73bip3ml5f8n" path="res://scenes/objects/furniture/bird_feeder.tscn" id="2_vsian"]
+[ext_resource type="PackedScene" uid="uid://wp587bl6124w" path="res://scenes/objects/furniture/sofa_fancy.tscn" id="1_irue0"]
+[ext_resource type="PackedScene" uid="uid://mddj28kqqs58" path="res://scenes/objects/furniture/bird_feeder.tscn" id="2_vsian"]
 
 [node name="furniture_stage_3" type="Node2D"]
 y_sort_enabled = true
+position = Vector2(224, -32)
 
 [node name="Furniture2x1" parent="." instance=ExtResource("1_irue0")]
-position = Vector2(43, -61)
+position = Vector2(48, -80)
 
 [node name="Furniture1x1" parent="." instance=ExtResource("2_vsian")]
 position = Vector2(70, -70)
