@@ -382,7 +382,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqfba"]
 size = Vector2(15, 15)
 
-[node name="Furniture2x1" type="CharacterBody2D" groups=["furniture", "lvingroom_item"]]
+[node name="Furniture2x1" type="CharacterBody2D" groups=["furniture", "livingroom_item"]]
 script = ExtResource("1_85xkt")
 fancy_name = "Skrillex"
 description = "Multi-functional storage item!"
