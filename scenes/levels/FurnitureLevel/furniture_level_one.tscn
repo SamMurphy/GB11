@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c4oj43uvdy5cb"]
+[gd_scene load_steps=28 format=3 uid="uid://c4oj43uvdy5cb"]
 
 [ext_resource type="Script" path="res://scripts/levels/furniture_level_one.gd" id="1_g8ckv"]
 [ext_resource type="Texture2D" uid="uid://cxo6h6h4epvls" path="res://assets/textures/REPLACE_ME/Furniture/WallTileset.png" id="1_hu8a1"]
@@ -12,6 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://dywkuex28s440" path="res://scenes/ui/room_view.tscn" id="10_kiemx"]
 [ext_resource type="PackedScene" uid="uid://dagtnxlvaa3f0" path="res://scenes/objects/score_label.tscn" id="11_r6snd"]
 [ext_resource type="PackedScene" uid="uid://b1ktqug82oygx" path="res://scenes/objects/furniture/Sink.tscn" id="12_jmdtf"]
+[ext_resource type="PackedScene" uid="uid://bbf0masryia4m" path="res://scenes/objects/furniture/KitchenCabinet1.tscn" id="13_ymg6f"]
+[ext_resource type="PackedScene" uid="uid://bntt2xt7qydml" path="res://scenes/objects/furniture/KitchenCabinet2.tscn" id="14_o4cwi"]
+[ext_resource type="PackedScene" uid="uid://no6m4bsjfm3r" path="res://scenes/objects/furniture/Bath.tscn" id="15_pt2ij"]
+[ext_resource type="PackedScene" uid="uid://cf5qp0tnjky54" path="res://scenes/objects/furniture/Toilet.tscn" id="16_02260"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sgg1t"]
 resource_name = "furniture_world_texture"
@@ -302,3 +306,24 @@ position = Vector2(116, -46)
 
 [node name="Sink" parent="." instance=ExtResource("12_jmdtf")]
 position = Vector2(216, 120)
+
+[node name="KitchenCabinet" parent="." instance=ExtResource("13_ymg6f")]
+position = Vector2(248, -40)
+
+[node name="KitchenCabinet2" parent="." instance=ExtResource("14_o4cwi")]
+position = Vector2(264, -40)
+
+[node name="KitchenCabinet3" parent="." instance=ExtResource("13_ymg6f")]
+position = Vector2(296, -40)
+
+[node name="KitchenCabinet4" parent="." instance=ExtResource("13_ymg6f")]
+position = Vector2(312, -40)
+
+[node name="KitchenCabinet5" parent="." instance=ExtResource("13_ymg6f")]
+position = Vector2(328, -40)
+
+[node name="Bath" parent="." instance=ExtResource("15_pt2ij")]
+position = Vector2(208, 152)
+
+[node name="Toilet" parent="." instance=ExtResource("16_02260")]
+position = Vector2(168, 120)
