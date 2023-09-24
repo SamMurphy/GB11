@@ -1,14 +1,14 @@
 [gd_scene load_steps=19 format=3 uid="uid://cfcf0i5s4c1ud"]
 
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_juxg3"]
-[ext_resource type="Material" uid="uid://d140yq8lirhjr" path="res://assets/shaders/Furniture.tres" id="2_78k3a"]
+[ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_78k3a"]
 [ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="2_y76b0"]
 [ext_resource type="Texture2D" uid="uid://b6go60lyb6f74" path="res://assets/textures/REPLACE_ME/Furniture/sofa/back.png" id="3_cfx5n"]
 [ext_resource type="Texture2D" uid="uid://31fubx0ou2ro" path="res://assets/textures/REPLACE_ME/Furniture/sofa/front.png" id="4_py6ie"]
 [ext_resource type="Texture2D" uid="uid://bhbc5fpfrlho3" path="res://assets/textures/REPLACE_ME/Furniture/sofa/left.png" id="5_v3hjt"]
 [ext_resource type="Texture2D" uid="uid://dpxppnlcdajwf" path="res://assets/textures/REPLACE_ME/Furniture/sofa/right.png" id="6_b1s12"]
 [ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="7_fjg8f"]
-[ext_resource type="PackedScene" uid="uid://bkkyab6rbqee3" path="res://scenes/objects/FurnitureCommon.tscn" id="9_47nny"]
+[ext_resource type="PackedScene" path="res://scenes/objects/FurnitureCommon.tscn" id="9_47nny"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nb45i"]
 animations = [{
@@ -383,7 +383,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqfba"]
 size = Vector2(15, 15)
 
-[node name="Furniture2x1" type="StaticBody2D" groups=["furniture"]]
+[node name="Furniture2x1" type="CharacterBody2D" groups=["furniture"]]
 script = ExtResource("1_juxg3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

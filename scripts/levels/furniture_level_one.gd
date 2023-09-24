@@ -17,6 +17,12 @@ func _process(delta):
 
 func _load_next_stage():
 	if current_level_stage < scenes.size():
+		# Remove all pieces of furniture in the bin
+		var binOverlaps = $game_scorer/Bin.get_overlapping_bodies()
+		for bin in binOverlaps:
+			if bin.is_in_group("furniture"):
+				bin.queue_free()
+		
 		var scene_to_load = ResourceLoader.load(scenes[current_level_stage])
 		var loaded_scene = scene_to_load.instantiate()
 		self.add_child(loaded_scene)

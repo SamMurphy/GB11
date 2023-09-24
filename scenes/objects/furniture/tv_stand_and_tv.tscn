@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cd2y7eipqxq1s"]
+[gd_scene load_steps=18 format=3 uid="uid://dutyb56da4ptx"]
 
 [ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="1_vvqts"]
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="2_aaydw"]
@@ -140,7 +140,7 @@ _data = {
 "right": SubResource("Animation_oml8v")
 }
 
-[node name="Furniture2x2" type="StaticBody2D" groups=["furniture"]]
+[node name="Furniture2x2" type="CharacterBody2D" groups=["furniture"]]
 material = ExtResource("1_vvqts")
 script = ExtResource("2_aaydw")
 fancy_name = "Tv stand (with TV!)"
