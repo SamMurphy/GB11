@@ -325,5 +325,5 @@ position = Vector2(328, -40)
 [node name="Bath" parent="." instance=ExtResource("15_pt2ij")]
 position = Vector2(208, 152)
 
-[node name="Furniture1x1" parent="." instance=ExtResource("16_02260")]
+[node name="Toilet" parent="." instance=ExtResource("16_02260")]
 position = Vector2(168, 120)
