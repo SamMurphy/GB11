@@ -5,6 +5,7 @@
 
 [node name="furniture_stage_0" type="Node2D"]
 y_sort_enabled = true
+position = Vector2(224, -32)
 
 [node name="Furniture1x1" parent="." instance=ExtResource("1_1rya0")]
 position = Vector2(37, -54)
