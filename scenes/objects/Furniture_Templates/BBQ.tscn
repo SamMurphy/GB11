@@ -385,6 +385,8 @@ size = Vector2(15, 15)
 
 [node name="Furniture2x1" type="CharacterBody2D" groups=["furniture", "garden_item"]]
 script = ExtResource("1_u5pcp")
+fancy_name = "BBQ"
+description = "This baby can fit so much chicken in it"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = ExtResource("2_1r630")
