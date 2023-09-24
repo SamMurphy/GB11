@@ -2,6 +2,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 signal player_position
+signal can_scene_end
 signal player_score(score, total)
 
 func _ready():
@@ -17,6 +18,7 @@ func _check_all_groups():
 
 func _check_group(room: Area2D):
 	# Get group of room
+	var is_furniture_correct = true
 	var room_type = room.get_groups()[0] #LOL hardcoded array access, love it
 	
 	# True positive = correct item in correct room
@@ -39,13 +41,17 @@ func _check_group(room: Area2D):
 	
 	# Get all the objects of this room type
 	var other_items = get_tree().get_nodes_in_group(room_type)
+	
+	if (len(other_items)-1 != score):
+		is_furniture_correct = false		 
+	
 	if isPlayerRoom:		
 		if ((len(other_items)-1) > 0):
 			var scaled_score = score/(len(other_items)-1)
-			print("Emitted score: ", score, "Emitted total: ", len(other_items)-1)
 			player_score.emit(score, len(other_items)-1)
 		else:
 			player_score.emit(0,0)
+	can_scene_end.emit(is_furniture_correct)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

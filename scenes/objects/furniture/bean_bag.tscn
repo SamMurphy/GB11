@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bk1dsubd5jktq"]
+[gd_scene load_steps=15 format=3 uid="uid://ddihq6waba53l"]
 
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_cbai3"]
 [ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_f2oro"]
