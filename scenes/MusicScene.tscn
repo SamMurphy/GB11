@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0l6mdj82svm0"]
+
+[ext_resource type="AudioStream" uid="uid://bx4o2fve3r1c4" path="res://assets/sounds/music/We_Move_It.mp3" id="1_oi81k"]
+[ext_resource type="Script" path="res://scripts/levels/MusicScene.gd" id="1_pvrbu"]
+[ext_resource type="AudioStream" uid="uid://da7uklsydk7op" path="res://assets/sounds/music/Sofa_So_Good.mp3" id="2_e2sx5"]
+[ext_resource type="AudioStream" uid="uid://dlpie1subeli3" path="res://assets/sounds/music/Moving_In.mp3" id="3_71v87"]
+
+[node name="MusicScene" type="Node2D" node_paths=PackedStringArray("tracks")]
+script = ExtResource("1_pvrbu")
+tracks = [NodePath("WeMoveIt"), NodePath("SofaSoGood"), NodePath("MovingIn")]
+
+[node name="WeMoveIt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_oi81k")
+bus = &"Music"
+
+[node name="SofaSoGood" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_e2sx5")
+bus = &"Music"
+
+[node name="MovingIn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_71v87")
+bus = &"Music"

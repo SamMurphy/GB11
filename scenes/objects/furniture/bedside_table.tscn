@@ -142,6 +142,8 @@ script = ExtResource("1_qey62")
 fancy_name = "Bedside table"
 description = "You can put your smartphone here! Wait, what's a smartphone?"
 weight = 1.0
+proximity_furniture_range = 48
+proximity_furniture_groups = Array[String](["bed"])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = ExtResource("2_2lyrd")

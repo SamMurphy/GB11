@@ -12,8 +12,14 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _process(delta):	
+	# Scoring
+	var score = 0
+	var all_furniture = get_tree().get_nodes_in_group("furniture")
+	for furniture in all_furniture:
+		score += furniture._get_total_score()
+	
+	GameGlobals.Score = score
 
 func _load_next_stage():
 	if current_level_stage < scenes.size():
@@ -22,7 +28,7 @@ func _load_next_stage():
 		for bin in binOverlaps:
 			if bin.is_in_group("furniture"):
 				bin.queue_free()
-		
+				
 		var scene_to_load = ResourceLoader.load(scenes[current_level_stage])
 		var loaded_scene = scene_to_load.instantiate()
 		self.add_child(loaded_scene)

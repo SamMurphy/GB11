@@ -13,6 +13,13 @@ extends PhysicsBody2D
 
 @export var is_end_game_object : bool = false
 
+@export var base_score : int = 5
+@export var proximity_furniture_range : int = 64
+@export var proximity_furniture_base_score : int = 3
+@export var proximity_furniture_groups : Array[String]
+@export var room_bonus : String
+@export var room_bonus_score : int = 5
+
 @onready var movement = get_node("Movement")
 @onready var sprite = get_node("AnimatedSprite2D")
 @onready var anim = get_node("AnimationPlayer")
@@ -54,6 +61,20 @@ func activateDialogue():
 
 func endGameDialogue():
 	end_day._endDayInteract()
+
+func _get_total_score():
+	var score = base_score
+	
+	for group in proximity_furniture_groups:
+		var furniture_in_group = get_tree().get_nodes_in_group(group)
+		for furniture_item in furniture_in_group:
+			if furniture_item != self:
+				var theirPos = furniture_item.position
+				var distance = position.distance_to(theirPos)
+				if distance < proximity_furniture_range && proximity_furniture_range > 0:
+					score += proximity_furniture_base_score
+	
+	return score
 
 func _rotate():
 	if collision_checker_counter > 0:
