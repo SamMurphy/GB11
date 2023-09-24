@@ -9,6 +9,7 @@ script = ExtResource("1_puxos")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 1)
 offset_right = 42.0
 offset_bottom = 23.0
 text = "TIME: "
