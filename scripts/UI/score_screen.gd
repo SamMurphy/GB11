@@ -13,7 +13,7 @@ func _ready():
 	for character in characters:
 		character.text = 'A'
 	if score_lbl:
-		var format_score = "%.3f seconds!"
+		var format_score = "%.0f!"
 		var score_string = format_score % [GameGlobals.Score]
 		score_lbl.text = score_string
 	var tween = create_tween()
@@ -52,6 +52,20 @@ func _input(event):
 		if !called_complete:
 			called_complete = true
 			send_score()
+			
+	match current_index:
+		0:
+			$enter_your_name/name/first_icon.visible = true
+			$enter_your_name/name/second_icon.visible = false
+			$enter_your_name/name/third_icon.visible = false
+		1:
+			$enter_your_name/name/first_icon.visible = false
+			$enter_your_name/name/second_icon.visible = true
+			$enter_your_name/name/third_icon.visible = false
+		2:
+			$enter_your_name/name/first_icon.visible = false
+			$enter_your_name/name/second_icon.visible = false
+			$enter_your_name/name/third_icon.visible = true
 			
 func send_score():
 	var name = ""
