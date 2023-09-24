@@ -3,10 +3,14 @@ extends ColorRect
 var count_enabled = false
 
 @onready var game_scorer = get_node("../../../game_scorer")
+@onready var end_game = get_node("../../EndDayInteraction/CanvasLayer/BoxOfWords")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	game_scorer.player_position.connect(_update_player_location)
-	game_scorer.player_score.connect(_update_player_score)
+	end_game.popup.connect(_enable_popup)
+	
+func _enable_popup():
+	count_enabled = true
 
 func _process(delta):
 	if Input.is_action_just_pressed("Select"):
