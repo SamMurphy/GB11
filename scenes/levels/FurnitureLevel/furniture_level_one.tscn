@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bo7sjaak8y8xf" path="res://assets/textures/backgrounds/tilesetJess.png" id="3_whlng"]
 [ext_resource type="PackedScene" uid="uid://canvhsa24qm8w" path="res://scenes/objects/Furniture.tscn" id="4_kycti"]
 [ext_resource type="PackedScene" uid="uid://kgecqmdymyyi" path="res://scenes/ui/interact_endday.tscn" id="5_856se"]
-[ext_resource type="PackedScene" uid="uid://svotf0k5i03i" path="res://scenes/objects/furniture/Bed.tscn" id="6_sawng"]
+[ext_resource type="PackedScene" uid="uid://svotf0k5i03i" path="res://scenes/objects/furniture/bed.tscn" id="6_sawng"]
 [ext_resource type="Script" path="res://scenes/levels/FurnitureLevel/game_scorer.gd" id="8_44qxb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sgg1t"]
@@ -144,7 +144,7 @@ size = Vector2(207, 94)
 
 [node name="furniture_level_one" type="Node2D"]
 script = ExtResource("1_g8ckv")
-scenes = Array[String](["res://scenes/levels/FurnitureLevel/LevelStages/furniture_stage_0.tscn", "res://scenes/levels/FurnitureLevel/LevelStages/furniture_stage_1.tscn", "res://scenes/levels/FurnitureLevel/LevelStages/furniture_stage_2.tscn"])
+scenes = Array[String](["res://scenes/levels/FurnitureLevel/LevelStages/furniture_stage_0.tscn", "res://scenes/levels/FurnitureLevel/LevelStages/furniture_stage_1.tscn", "res://scenes/levels/FurnitureLevel/LevelStages/furniture_stage_2.tscn", "res://scenes/levels/FurnitureLevel/LevelStages/furniture_stage_3.tscn", "res://scenes/levels/FurnitureLevel/LevelStages/furniture_stage_4.tscn"])
 
 [node name="WorldMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_qiqey")

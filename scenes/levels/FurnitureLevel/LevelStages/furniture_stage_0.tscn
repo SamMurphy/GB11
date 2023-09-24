@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b55a6wx53ot55"]
 
-[ext_resource type="PackedScene" uid="uid://b0ig710hqfoxw" path="res://scenes/objects/furniture/bear.tscn" id="1_1rya0"]
+[ext_resource type="PackedScene" uid="uid://dl4kovmljkyhk" path="res://scenes/objects/furniture/bear.tscn" id="1_1rya0"]
 [ext_resource type="PackedScene" uid="uid://svotf0k5i03i" path="res://scenes/objects/furniture/bed.tscn" id="1_w6ecr"]
 [ext_resource type="PackedScene" uid="uid://ddihq6waba53l" path="res://scenes/objects/furniture/bean_bag.tscn" id="2_ln4g6"]
 
