@@ -277,7 +277,7 @@ shape = SubResource("RectangleShape2D_7oyql")
 position = Vector2(288, 1)
 shape = SubResource("RectangleShape2D_4erhp")
 
-[node name="Bin" type="Area2D" parent="game_scorer" groups=["bin_area"]]
+[node name="Bin" type="Area2D" parent="game_scorer" groups=["bin_area", "score_item"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="game_scorer/Bin"]
 position = Vector2(288, -96)
