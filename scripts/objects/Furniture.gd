@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends PhysicsBody2D
 
 ## The name of the furniture that will show up in the interactive text
 @export var fancy_name : String = "This is the name of the furniture."

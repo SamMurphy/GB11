@@ -138,7 +138,7 @@ _data = {
 "right": SubResource("Animation_oml8v")
 }
 
-[node name="Furniture1x1" type="StaticBody2D" groups=["any_item", "furniture"]]
+[node name="Furniture1x1" type="CharacterBody2D" groups=["any_item", "furniture"]]
 script = ExtResource("1_hd7uj")
 fancy_name = "Floor Lamp"
 description = "Makes reading easier."

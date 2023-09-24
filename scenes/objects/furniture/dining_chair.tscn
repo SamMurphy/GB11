@@ -140,7 +140,7 @@ _data = {
 "right": SubResource("Animation_oml8v")
 }
 
-[node name="Furniture1x1" type="StaticBody2D" groups=["furniture"]]
+[node name="Furniture1x1" type="CharacterBody2D" groups=["furniture"]]
 script = ExtResource("1_f0ek5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

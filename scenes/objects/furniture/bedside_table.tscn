@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bwd7m6dc5bfx4"]
+[gd_scene load_steps=15 format=3 uid="uid://de8aceqq2xgmq"]
 
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_qey62"]
 [ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_2lyrd"]
@@ -137,7 +137,7 @@ _data = {
 "right": SubResource("Animation_oml8v")
 }
 
-[node name="Furniture1x1" type="StaticBody2D" groups=["furniture"]]
+[node name="Furniture1x1" type="CharacterBody2D" groups=["furniture"]]
 script = ExtResource("1_qey62")
 fancy_name = "Bedside table"
 description = "You can put your smartphone here! Wait, what's a smartphone?"
