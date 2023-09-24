@@ -7,9 +7,9 @@ extends Level2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Set time label
-	var format_score = "%.3f"
+	var format_score = "%.0f Points!"
 	var score_string = format_score % [GameGlobals.Score]
-	time_label.text = score_string + " seconds"
+	time_label.text = score_string
 	
 	var headers = ["User-Agent: GodotEngine", "Access-Control-Allow-Origin: '*'", "Content-type: text/plain"]
 	# Get the high scores
