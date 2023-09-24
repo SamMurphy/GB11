@@ -386,7 +386,7 @@ size = Vector2(15, 15)
 script = ExtResource("1_85xkt")
 fancy_name = "Skrillex"
 description = "Multi-functional storage item!"
-weight = 1.5
+weight = 1.2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = ExtResource("2_ha564")

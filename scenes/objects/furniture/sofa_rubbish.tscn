@@ -383,7 +383,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqfba"]
 size = Vector2(15, 15)
 
-[node name="Furniture2x2" type="CharacterBody2D" groups=["any_item", "furniture", "sofa"]]
+[node name="Furniture2x2" type="CharacterBody2D" groups=["furniture", "livingroom_item", "sofa"]]
 script = ExtResource("1_1topl")
 fancy_name = "Ugly Sofa"
 description = "A basic sofa, not tasty at all."
