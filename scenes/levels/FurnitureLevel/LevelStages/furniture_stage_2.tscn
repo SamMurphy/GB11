@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://drs25fjsg8pk8"]
+[gd_scene load_steps=4 format=3 uid="uid://drs25fjsg8pk8"]
 
 [ext_resource type="PackedScene" uid="uid://w61o2xj6nfjl" path="res://scenes/objects/furniture/dining_chair.tscn" id="1_eh5j7"]
 [ext_resource type="PackedScene" uid="uid://4xscfjeqhf04" path="res://scenes/objects/furniture/dining_table.tscn" id="2_08xan"]
+[ext_resource type="PackedScene" uid="uid://cpqu42p14agx" path="res://scenes/objects/furniture/kallax.tscn" id="3_siwmy"]
 
 [node name="furniture_stage_0" type="Node2D"]
 
@@ -19,3 +20,6 @@ position = Vector2(100, -100)
 
 [node name="Furniture2x1" parent="." instance=ExtResource("2_08xan")]
 position = Vector2(147, -92)
+
+[node name="Furniture2x2" parent="." instance=ExtResource("3_siwmy")]
+position = Vector2(49, -124)
