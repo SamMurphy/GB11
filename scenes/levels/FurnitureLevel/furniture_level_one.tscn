@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c4oj43uvdy5cb"]
+[gd_scene load_steps=27 format=3 uid="uid://c4oj43uvdy5cb"]
 
 [ext_resource type="Script" path="res://scripts/levels/furniture_level_one.gd" id="1_g8ckv"]
 [ext_resource type="Texture2D" uid="uid://cxo6h6h4epvls" path="res://assets/textures/REPLACE_ME/Furniture/WallTileset.png" id="1_hu8a1"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bntt2xt7qydml" path="res://scenes/objects/furniture/KitchenCabinet2.tscn" id="14_o4cwi"]
 [ext_resource type="PackedScene" uid="uid://no6m4bsjfm3r" path="res://scenes/objects/furniture/Bath.tscn" id="15_pt2ij"]
 [ext_resource type="PackedScene" uid="uid://cf5qp0tnjky54" path="res://scenes/objects/furniture/Toilet.tscn" id="16_02260"]
+[ext_resource type="PackedScene" uid="uid://dterupkba7u5m" path="res://scenes/objects/furniture/Oven.tscn" id="17_ao478"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sgg1t"]
 resource_name = "furniture_world_texture"
@@ -192,9 +193,6 @@ sources/2 = SubResource("TileSetAtlasSource_w3a8x")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iieds"]
 size = Vector2(113, 65)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlchf"]
-size = Vector2(112, 31)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lxonh"]
 size = Vector2(128.5, 62)
 
@@ -206,9 +204,6 @@ size = Vector2(95.5, 125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8ub8"]
 size = Vector2(128, 64)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qicno"]
-size = Vector2(207, 94)
 
 [node name="furniture_level_one" type="Node2D"]
 y_sort_enabled = true
@@ -258,12 +253,6 @@ script = ExtResource("8_44qxb")
 position = Vector2(280.5, 129)
 shape = SubResource("RectangleShape2D_iieds")
 
-[node name="Hall" type="Area2D" parent="game_scorer"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="game_scorer/Hall"]
-position = Vector2(280, 79.5)
-shape = SubResource("RectangleShape2D_dlchf")
-
 [node name="Spare room" type="Area2D" parent="game_scorer" groups=["office_item", "score_item"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="game_scorer/Spare room"]
@@ -291,9 +280,8 @@ metadata/_edit_lock_ = true
 
 [node name="LivingRoom" type="Area2D" parent="game_scorer" groups=["livingroom_item", "score_item"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="game_scorer/LivingRoom"]
-position = Vector2(119.5, 49)
-shape = SubResource("RectangleShape2D_qicno")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="game_scorer/LivingRoom"]
+polygon = PackedVector2Array(16, 1, 16, 97, 336, 96, 336, 64, 225, 64, 225, 1)
 
 [node name="Garden" type="Area2D" parent="game_scorer" groups=["garden_item", "score_item"]]
 
@@ -316,9 +304,6 @@ position = Vector2(264, -40)
 [node name="KitchenCabinet3" parent="." instance=ExtResource("13_ymg6f")]
 position = Vector2(296, -40)
 
-[node name="KitchenCabinet4" parent="." instance=ExtResource("13_ymg6f")]
-position = Vector2(312, -40)
-
 [node name="KitchenCabinet5" parent="." instance=ExtResource("13_ymg6f")]
 position = Vector2(328, -40)
 
@@ -327,3 +312,6 @@ position = Vector2(208, 152)
 
 [node name="Toilet" parent="." instance=ExtResource("16_02260")]
 position = Vector2(168, 120)
+
+[node name="Furniture1x1" parent="." instance=ExtResource("17_ao478")]
+position = Vector2(312, -40)
