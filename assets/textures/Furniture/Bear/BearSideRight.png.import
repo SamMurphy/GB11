@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ba58ptn2ctcxd"
-path="res://.godot/imported/BearSide.png-b3828ddbad3b4e1da18316c9a0b5854b.ctex"
+path="res://.godot/imported/BearSideRight.png-94e08af09fdea40bfe020c8a2ddcca0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Furniture/Bear/BearSide.png"
-dest_files=["res://.godot/imported/BearSide.png-b3828ddbad3b4e1da18316c9a0b5854b.ctex"]
+source_file="res://assets/textures/Furniture/Bear/BearSideRight.png"
+dest_files=["res://.godot/imported/BearSideRight.png-94e08af09fdea40bfe020c8a2ddcca0a.ctex"]
 
 [params]
 
