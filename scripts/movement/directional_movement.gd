@@ -5,7 +5,7 @@ const STEP_DISTANCE = 16
 const STEP_OFFSET = 8
 
 #
-var speed = 150.0
+@export var speed = 150.0
 var targetPosition
 var lastSafeTarget
 
