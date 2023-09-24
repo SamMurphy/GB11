@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b0ig710hqfoxw"]
+[gd_scene load_steps=16 format=3 uid="uid://dl4kovmljkyhk"]
 
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_rqmp5"]
 [ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_7pjdo"]
@@ -28,7 +28,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_ka3g0")
+"texture": ExtResource("4_b5bq0")
 }],
 "loop": true,
 "name": &"front",
@@ -36,7 +36,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_b5bq0")
+"texture": ExtResource("5_ka3g0")
 }],
 "loop": true,
 "name": &"left",
