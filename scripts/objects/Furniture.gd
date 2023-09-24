@@ -38,6 +38,7 @@ var tween
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	sprite.set_y_sort_enabled(true)
 	anim.play("front")
 	can_push = true
 	time_to_push = weight
