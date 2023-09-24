@@ -199,7 +199,7 @@ script = ExtResource("8_44qxb")
 position = Vector2(280.5, 129)
 shape = SubResource("RectangleShape2D_iieds")
 
-[node name="Hall" type="Area2D" parent="game_scorer" groups=["bedroom_item", "score_item"]]
+[node name="Hall" type="Area2D" parent="game_scorer"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="game_scorer/Hall"]
 position = Vector2(280, 79.5)
