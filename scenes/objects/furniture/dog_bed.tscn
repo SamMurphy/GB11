@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_20qe2"]
 [ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_jxfy8"]
 [ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="3_p74uw"]
-[ext_resource type="Texture2D" uid="uid://b405px45o245i" path="res://assets/textures/Furniture/Dog Bed/dog_bed_down.png" id="4_7coic"]
-[ext_resource type="Texture2D" uid="uid://c8ar8bq42061x" path="res://assets/textures/Furniture/Dog Bed/dog_bed_up.png" id="5_jhanh"]
-[ext_resource type="Texture2D" uid="uid://pcyqjklk1lsi" path="res://assets/textures/Furniture/Dog Bed/dog_bed_right.png" id="6_sib8f"]
-[ext_resource type="Texture2D" uid="uid://bhggolng885aa" path="res://assets/textures/Furniture/Dog Bed/dog_bed_left.png" id="7_04dnp"]
+[ext_resource type="Texture2D" uid="uid://dqus0j23a1qej" path="res://assets/textures/Furniture/Dog Bed/DogBedBack.png" id="4_fyili"]
+[ext_resource type="Texture2D" uid="uid://bs7x7g8sicxkf" path="res://assets/textures/Furniture/Dog Bed Fancy/DogBedFancy.png" id="5_sgh5r"]
+[ext_resource type="Texture2D" uid="uid://ddkcnq0dgqg8o" path="res://assets/textures/Furniture/Dog Bed/DogBedLeft.png" id="6_l2n3v"]
+[ext_resource type="Texture2D" uid="uid://shkktd8bjamo" path="res://assets/textures/Furniture/Dog Bed/DogBedRight.png" id="7_aw4aj"]
 [ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="8_c4ja5"]
 [ext_resource type="PackedScene" path="res://scenes/objects/FurnitureCommon.tscn" id="9_p5cjg"]
 
@@ -22,7 +22,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_7coic")
+"texture": ExtResource("4_fyili")
 }],
 "loop": true,
 "name": &"back",
@@ -30,7 +30,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_jhanh")
+"texture": ExtResource("5_sgh5r")
 }],
 "loop": true,
 "name": &"front",
@@ -38,7 +38,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_sib8f")
+"texture": ExtResource("6_l2n3v")
 }],
 "loop": true,
 "name": &"left",
@@ -46,7 +46,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_04dnp")
+"texture": ExtResource("7_aw4aj")
 }],
 "loop": true,
 "name": &"right",
