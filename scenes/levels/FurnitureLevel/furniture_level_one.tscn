@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c4oj43uvdy5cb"]
+[gd_scene load_steps=21 format=3 uid="uid://c4oj43uvdy5cb"]
 
 [ext_resource type="Script" path="res://scripts/levels/furniture_level_one.gd" id="1_g8ckv"]
 [ext_resource type="Texture2D" uid="uid://cxo6h6h4epvls" path="res://assets/textures/REPLACE_ME/Furniture/WallTileset.png" id="1_hu8a1"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://kgecqmdymyyi" path="res://scenes/ui/interact_endday.tscn" id="5_856se"]
 [ext_resource type="PackedScene" uid="uid://svotf0k5i03i" path="res://scenes/objects/furniture/bed.tscn" id="6_sawng"]
 [ext_resource type="Script" path="res://scenes/levels/FurnitureLevel/game_scorer.gd" id="8_44qxb"]
+[ext_resource type="PackedScene" uid="uid://dywkuex28s440" path="res://scenes/ui/room_view.tscn" id="10_kiemx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sgg1t"]
 resource_name = "furniture_world_texture"
@@ -127,17 +128,20 @@ sources/1 = SubResource("TileSetAtlasSource_a3lqd")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iieds"]
 size = Vector2(113, 65)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlchf"]
+size = Vector2(112, 31)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lxonh"]
-size = Vector2(97, 112)
+size = Vector2(128.5, 62)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7oyql"]
 size = Vector2(64, 62)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4erhp"]
-size = Vector2(129, 62)
+size = Vector2(95.5, 125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8ub8"]
-size = Vector2(64, 63)
+size = Vector2(64, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qicno"]
 size = Vector2(207, 94)
@@ -170,6 +174,8 @@ offset_top = 22.25
 offset_right = 76.7499
 offset_bottom = 57.2503
 
+[node name="room_view" parent="player" instance=ExtResource("10_kiemx")]
+
 [node name="Sofa" parent="." groups=["livingroom_item"] instance=ExtResource("4_kycti")]
 position = Vector2(104, 48)
 fancy_name = "Sofa"
@@ -188,10 +194,16 @@ script = ExtResource("8_44qxb")
 position = Vector2(280.5, 129)
 shape = SubResource("RectangleShape2D_iieds")
 
+[node name="Hall" type="Area2D" parent="game_scorer" groups=["bedroom_item", "score_item"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="game_scorer/Hall"]
+position = Vector2(280, 79.5)
+shape = SubResource("RectangleShape2D_dlchf")
+
 [node name="Office" type="Area2D" parent="game_scorer" groups=["office_item", "score_item"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="game_scorer/Office"]
-position = Vector2(287.5, 7)
+position = Vector2(79.75, 130)
 shape = SubResource("RectangleShape2D_lxonh")
 
 [node name="Bathroom" type="Area2D" parent="game_scorer" groups=["bathroom_item", "score_item"]]
@@ -203,13 +215,13 @@ shape = SubResource("RectangleShape2D_7oyql")
 [node name="Kitchen" type="Area2D" parent="game_scorer" groups=["kitchen_item", "score_item"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="game_scorer/Kitchen"]
-position = Vector2(79.5, 129)
+position = Vector2(288, 1)
 shape = SubResource("RectangleShape2D_4erhp")
 
 [node name="Bin" type="Area2D" parent="game_scorer" groups=["bin_area"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="game_scorer/Bin"]
-position = Vector2(192, -32.5)
+position = Vector2(192, -32)
 shape = SubResource("RectangleShape2D_i8ub8")
 
 [node name="LivingRoom" type="Area2D" parent="game_scorer" groups=["livingroom_item", "score_item"]]
