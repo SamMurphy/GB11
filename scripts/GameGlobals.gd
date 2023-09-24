@@ -13,3 +13,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func change_fade_time(fade_time : float):
+	RenderingServer.global_shader_parameter_set("transition_amount", fade_time)

@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgqyh3anx1foc"]
+[gd_scene load_steps=8 format=3 uid="uid://dgqyh3anx1foc"]
 
 [ext_resource type="Shader" path="res://assets/shaders/postfx/gb_shader.gdshader" id="1_arfl7"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tnfc5"]
+[ext_resource type="Shader" path="res://assets/shaders/postfx/transition.gdshader" id="2_0vfgl"]
 [ext_resource type="Texture2D" uid="uid://dlb4bdqx0qb7e" path="res://assets/textures/postfx/bayer_pattern.png" id="2_5stho"]
 [ext_resource type="AudioStream" uid="uid://bebtoi77epa8k" path="res://assets/sounds/bg_music.wav" id="4_awyee"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ie128"]
+shader = ExtResource("2_0vfgl")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r1fiw"]
 resource_name = "gb_colouriser_mat"
@@ -21,10 +25,19 @@ script = ExtResource("1_tnfc5")
 main_menu_path = "res://scenes/ui/main_menu.tscn"
 level_paths = Array[String](["res://scenes/levels/FurnitureLevel/furniture_level_one.tscn", "res://scenes/ui/score_screen.tscn", "res://scenes/ui/highscore_screen.tscn"])
 
-[node name="postfx" type="CanvasLayer" parent="."]
+[node name="fade_post_fx" type="CanvasLayer" parent="."]
+layer = 9
+
+[node name="fade_transition" type="ColorRect" parent="fade_post_fx"]
+material = SubResource("ShaderMaterial_ie128")
+offset_right = 160.0
+offset_bottom = 144.0
+metadata/_edit_lock_ = true
+
+[node name="game_boy_post_fx" type="CanvasLayer" parent="."]
 layer = 10
 
-[node name="gb_colouriser" type="ColorRect" parent="postfx"]
+[node name="gb_colouriser" type="ColorRect" parent="game_boy_post_fx"]
 material = SubResource("ShaderMaterial_r1fiw")
 anchors_preset = 15
 anchor_right = 1.0
