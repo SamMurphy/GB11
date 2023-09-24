@@ -383,7 +383,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqfba"]
 size = Vector2(15, 15)
 
-[node name="Furniture2x1" type="CharacterBody2D" groups=["any_item", "furniture"]]
+[node name="Furniture2x1" type="CharacterBody2D" groups=["any_item", "desk", "furniture"]]
 script = ExtResource("1_iw5k3")
 fancy_name = "Desk"
 description = "To write my letters"

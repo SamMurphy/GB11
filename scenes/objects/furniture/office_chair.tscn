@@ -145,6 +145,7 @@ script = ExtResource("1_05lg2")
 fancy_name = "Office chair"
 description = "Make sure you keep your back straight!"
 weight = 0.3
+proximity_furniture_groups = Array[String](["desk"])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = ExtResource("2_kyr8h")
