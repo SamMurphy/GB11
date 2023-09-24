@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dvck0w5cxnsg3"]
+[gd_scene load_steps=19 format=3 uid="uid://wp587bl6124w"]
 
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_ghiwp"]
 [ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_djpo3"]
@@ -383,7 +383,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqfba"]
 size = Vector2(15, 15)
 
-[node name="Furniture2x1" type="CharacterBody2D" groups=["furniture", "livingroom_item"]]
+[node name="Furniture2x1" type="CharacterBody2D" groups=["any_item", "furniture", "sofa"]]
 script = ExtResource("1_ghiwp")
 fancy_name = "Fancy sofa"
 description = "A soft, comfy sofa"

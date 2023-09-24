@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://epid68sblcf0"]
+[gd_scene load_steps=16 format=3 uid="uid://cr1jscdnfvdeb"]
 
 [ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_kx4c1"]
 [ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_amqhd"]
@@ -138,7 +138,7 @@ _data = {
 "right": SubResource("Animation_oml8v")
 }
 
-[node name="Furniture1x1" type="CharacterBody2D" groups=["furniture"]]
+[node name="Furniture1x1" type="CharacterBody2D" groups=["any_item", "furniture"]]
 script = ExtResource("1_kx4c1")
 fancy_name = "Moving box"
 description = "Where could you be going?"
