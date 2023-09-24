@@ -62,8 +62,7 @@ func _input(event):
 		a_press = false
 		pulling = false
 		if release_furniture_on_release && is_instance_valid(current_furniture):
-			current_furniture = null
-			release_furniture_on_release = false
+			release_furniture()
 
 func _physics_process(delta):
 	
@@ -82,15 +81,7 @@ func _physics_process(delta):
 	# Push / Rotate the furniture
 	var just_pushed = false
 	if a_held && is_instance_valid(current_furniture):
-		# push the furniture
-		var push_direction = Vector2(xDirection, yDirection)
-		just_pushed = current_furniture._push(push_direction)
-		# check if we're pulling it or not
-		var direction_to_furniture = current_furniture.global_position - global_position
-		if direction_to_furniture.dot(push_direction) < 0:
-			pulling = true
-		else:
-			pulling = false
+		just_pushed = handle_furniture_push(Vector2(xDirection, yDirection))
 	elif a_tapped && is_instance_valid(current_furniture) && !inDialogue:
 		current_furniture._rotate()
 	
@@ -104,13 +95,7 @@ func _physics_process(delta):
 		
 	
 	# Cast a ray to make sure there isn't anything in front of us	
-	var spaceState = get_world_2d().direct_space_state
-	var rayLength = (movement._get_step_distance() / 2.0) + 1.0
-	var rayDirection = Vector2(xDirection, yDirection) * rayLength
-	var query = PhysicsRayQueryParameters2D.create(global_position, global_position + rayDirection)
-	query.exclude = [self]
-	# if this is empty then there is nothing in front of us
-	var result = spaceState.intersect_ray(query)
+	var something_in_front = cast_a_ray(Vector2(xDirection, yDirection))
 	
 	# Stop the player moving if they're trying to pull the 
 	# furniture and it hasn't finished it's timer
@@ -119,7 +104,7 @@ func _physics_process(delta):
 		can_move = false
 	
 	# Movement
-	if result.is_empty() && can_move:
+	if !something_in_front && can_move:
 		if xDirection:
 			if xDirection == -1:
 				movement._move_left()
@@ -157,7 +142,10 @@ func _physics_process(delta):
 
 func _on_object_detector_entered(body):
 	if body.is_in_group("furniture"):
-		current_furniture = body
+		if !is_instance_valid(current_furniture):
+			current_furniture = body
+		elif body == current_furniture:
+			release_furniture_on_release = false
 
 func _on_object_detector_exited(body):
 	if is_instance_valid(current_furniture):
@@ -165,4 +153,67 @@ func _on_object_detector_exited(body):
 			if a_held:
 				release_furniture_on_release = true
 			else:
-				current_furniture = null
+				release_furniture()
+
+## Casts a ray of ray_length from the origin of the player in ray_direction
+## Returns wether it hits anything, ignoring the player
+func cast_a_ray(ray_direction : Vector2, ray_length : float = 9) -> bool:
+	# Cast a ray to make sure there isn't anything in front of us	
+	var spaceState = get_world_2d().direct_space_state
+	ray_direction = ray_direction * ray_length
+	var query = PhysicsRayQueryParameters2D.create(global_position, global_position + ray_direction)
+	query.exclude = [self]
+	# if this is empty then there is nothing in front of us
+	var result = spaceState.intersect_ray(query)
+	return !result.is_empty()
+	
+func handle_furniture_push(push_direction : Vector2) -> bool:
+	if push_direction == Vector2.ZERO:
+		return false
+
+	# Only care about horizonal and vertical directions, ignore diagonals
+	if push_direction.x != 0:
+		push_direction = Vector2(push_direction.x, 0)
+	elif push_direction.y != 0:
+		push_direction = Vector2(0, push_direction.y)
+	
+	# Calc the direction to the furniture
+	var furniture_collider = current_furniture.get_node("Collider")
+	var direction_to_furniture = (furniture_collider.global_position - global_position).normalized()
+	# Only care about horizonal and vertical directions, ignore diagonals
+	if abs(direction_to_furniture.x) > abs(direction_to_furniture.y):
+		direction_to_furniture = Vector2(direction_to_furniture.x, 0).normalized()
+	else:
+		direction_to_furniture = Vector2(0, direction_to_furniture.y).normalized()
+	
+	pulling = false
+	
+	# Are we still close to the furniture
+	var furniture_still_close = cast_a_ray(direction_to_furniture, 9)
+	#print(furniture_still_close)
+	if furniture_still_close == false:
+		#release_furniture()
+		return false
+	
+	# Calculate wether we're pushing or pulling
+	var dot_of_direction = direction_to_furniture.dot(push_direction)
+	if dot_of_direction == -1.0:
+		pulling = true
+		if !cast_a_ray(push_direction, 16):
+			return current_furniture._push(push_direction)
+		else:
+			return false
+	elif dot_of_direction == 1.0:
+		pulling = false
+		return current_furniture._push(push_direction)
+	else:
+		release_furniture()
+		return false
+		
+	return false
+	
+func release_furniture():
+	if is_instance_valid(current_furniture):
+		current_furniture._release_furniture()
+	release_furniture_on_release = false
+	current_furniture = null # release the furniture

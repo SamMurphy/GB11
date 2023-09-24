@@ -383,7 +383,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqfba"]
 size = Vector2(15, 15)
 
-[node name="Furniture" type="StaticBody2D" groups=["furniture"]]
+[node name="Furniture" type="CharacterBody2D" groups=["furniture"]]
 script = ExtResource("1_ptbax")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

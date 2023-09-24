@@ -37,7 +37,9 @@ func _check_group(room: Area2D):
 	
 	# Get all the objects of this room type
 	var other_items = get_tree().get_nodes_in_group(room_type)
-	var scaled_score = score/(len(other_items))
+	if ((len(other_items)-1) > 0):
+		var scaled_score = score/(len(other_items)-1)
+		print("Score: ", scaled_score)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
