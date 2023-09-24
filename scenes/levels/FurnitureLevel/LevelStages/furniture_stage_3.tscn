@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://cwkpnxpx4mex2"]
+[gd_scene load_steps=2 format=3 uid="uid://cwkpnxpx4mex2"]
+
+[ext_resource type="PackedScene" uid="uid://dvck0w5cxnsg3" path="res://scenes/objects/furniture/sofa_fancy.tscn" id="1_irue0"]
 
 [node name="furniture_stage_3" type="Node2D"]
+
+[node name="Furniture2x1" parent="." instance=ExtResource("1_irue0")]
+position = Vector2(43, -61)
