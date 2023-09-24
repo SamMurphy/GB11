@@ -140,8 +140,13 @@ _data = {
 "right": SubResource("Animation_oml8v")
 }
 
-[node name="Furniture1x1" type="CharacterBody2D" groups=["furniture"]]
+[node name="Furniture1x1" type="CharacterBody2D" groups=["any_item", "dining_chair", "furniture"]]
 script = ExtResource("1_f0ek5")
+fancy_name = "Dining Chair"
+description = "To sit on"
+proximity_furniture_range = 32
+proximity_furniture_base_score = 1
+proximity_furniture_groups = Array[String](["dining_table", "dining_chair"])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = ExtResource("2_sdf73")

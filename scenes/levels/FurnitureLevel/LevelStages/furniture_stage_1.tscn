@@ -3,16 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://b2h2sc3a2lyfp" path="res://scenes/objects/furniture/FloorLamp.tscn" id="2_3opv4"]
 [ext_resource type="PackedScene" uid="uid://bwd7m6dc5bfx4" path="res://scenes/objects/furniture/bedside_table.tscn" id="3_p72ao"]
 [ext_resource type="PackedScene" uid="uid://dxmalodca3xtp" path="res://scenes/objects/furniture/sofa_rubbish.tscn" id="3_vkufo"]
-[ext_resource type="PackedScene" uid="uid://cd2y7eipqxq1s" path="res://scenes/objects/furniture/tv_stand_and_tv.tscn" id="4_hsi1g"]
+[ext_resource type="PackedScene" uid="uid://dutyb56da4ptx" path="res://scenes/objects/furniture/tv_stand_and_tv.tscn" id="4_hsi1g"]
 [ext_resource type="Shader" path="res://assets/shaders/Furniture.gdshader" id="5_t3hvj"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7keoh"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_or6nj"]
 resource_local_to_scene = true
 shader = ExtResource("5_t3hvj")
 shader_parameter/flash_value = 0.0
 shader_parameter/flash_colour = Vector4(1, 1, 1, 1)
 
 [node name="furniture_stage_1" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Furniture1x1" parent="." instance=ExtResource("2_3opv4")]
 position = Vector2(121, -81)
@@ -27,5 +28,5 @@ position = Vector2(173, -90)
 position = Vector2(36, -94)
 
 [node name="Furniture2x2" parent="." instance=ExtResource("4_hsi1g")]
-material = SubResource("ShaderMaterial_7keoh")
+material = SubResource("ShaderMaterial_or6nj")
 position = Vector2(70, -111)

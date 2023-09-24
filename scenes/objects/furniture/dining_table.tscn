@@ -381,8 +381,13 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqfba"]
 size = Vector2(15, 15)
 
-[node name="Furniture2x1" type="CharacterBody2D" groups=["bedroom_item", "furniture"]]
+[node name="Furniture2x1" type="CharacterBody2D" groups=["any_item", "dining_table", "furniture"]]
 script = ExtResource("1_2j038")
+fancy_name = "Dining table"
+description = "To play board games on"
+weight = 0.75
+proximity_furniture_base_score = 1
+proximity_furniture_groups = Array[String](["dining_chair"])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = ExtResource("2_np2po")

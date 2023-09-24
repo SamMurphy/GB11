@@ -141,6 +141,7 @@ _data = {
 script = ExtResource("1_cbai3")
 fancy_name = "Bean bag"
 description = "Not actually filled with beans"
+weight = 0.2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = ExtResource("2_f2oro")

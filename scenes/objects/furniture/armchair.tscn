@@ -1,20 +1,20 @@
-[gd_scene load_steps=18 format=3 uid="uid://svotf0k5i03i"]
+[gd_scene load_steps=18 format=3 uid="uid://c142aqxppl5if"]
 
-[ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_a0brg"]
-[ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="2_5otq6"]
-[ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_osuf3"]
-[ext_resource type="Texture2D" uid="uid://i61xxaacu8sx" path="res://assets/textures/Furniture/Bed/Bed_back.png" id="3_gc3a4"]
-[ext_resource type="Texture2D" uid="uid://ceaf13abfq3w2" path="res://assets/textures/Furniture/Bed/Bed_front.png" id="4_rj3xa"]
-[ext_resource type="Texture2D" uid="uid://ifpv27tsuxcq" path="res://assets/textures/Furniture/Bed/Bed_right.png" id="5_cu4dx"]
-[ext_resource type="Texture2D" uid="uid://cihsgvjn5hywg" path="res://assets/textures/Furniture/Bed/Bed_left.png" id="6_ar81x"]
-[ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="7_q4075"]
-[ext_resource type="PackedScene" path="res://scenes/objects/FurnitureCommon.tscn" id="9_1aep5"]
+[ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_elv5s"]
+[ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_21r7i"]
+[ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="3_1due4"]
+[ext_resource type="Texture2D" uid="uid://btx6lygd4tsi6" path="res://assets/textures/Furniture/Armchair/ArmchairBack.png" id="4_8ofo7"]
+[ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="5_0vlyj"]
+[ext_resource type="Texture2D" uid="uid://dk8sdyf0mrngl" path="res://assets/textures/Furniture/Armchair/Armchair.png" id="5_bewrf"]
+[ext_resource type="Texture2D" uid="uid://dmnl87bxresis" path="res://assets/textures/Furniture/Armchair/ArmchairLeft.png" id="6_1mlix"]
+[ext_resource type="PackedScene" path="res://scenes/objects/FurnitureCommon.tscn" id="6_qnbbo"]
+[ext_resource type="Texture2D" uid="uid://bn3qn2wnndvtu" path="res://assets/textures/Furniture/Armchair/ArmchairRight.png" id="7_56xqp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nb45i"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_5otq6")
+"texture": ExtResource("3_1due4")
 }],
 "loop": true,
 "name": &"active",
@@ -22,7 +22,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_gc3a4")
+"texture": ExtResource("4_8ofo7")
 }],
 "loop": true,
 "name": &"back",
@@ -30,7 +30,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_rj3xa")
+"texture": ExtResource("5_bewrf")
 }],
 "loop": true,
 "name": &"front",
@@ -38,7 +38,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_cu4dx")
+"texture": ExtResource("6_1mlix")
 }],
 "loop": true,
 "name": &"left",
@@ -46,7 +46,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_ar81x")
+"texture": ExtResource("7_56xqp")
 }],
 "loop": true,
 "name": &"right",
@@ -54,7 +54,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o4but"]
-size = Vector2(31, 31)
+size = Vector2(15, 15)
 
 [sub_resource type="Animation" id="Animation_c6ncp"]
 length = 0.001
@@ -140,21 +140,17 @@ _data = {
 "right": SubResource("Animation_oml8v")
 }
 
-[node name="Furniture2x2" type="CharacterBody2D" groups=["bed", "bedroom_item", "furniture"]]
-script = ExtResource("1_a0brg")
-fancy_name = "Queen Sized Bed"
-description = "It's never too early to go to bed right?"
-weight = 1.0
-is_end_game_object = true
+[node name="Furniture1x1" type="CharacterBody2D" groups=["any_item", "chair", "furniture"]]
+script = ExtResource("1_elv5s")
+fancy_name = "Cosy Armchair"
+description = "10p in the seat cushion! Time to buy a Freddo"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-material = ExtResource("2_osuf3")
-position = Vector2(8, -8)
+material = ExtResource("2_21r7i")
 sprite_frames = SubResource("SpriteFrames_nb45i")
 animation = &"front"
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-position = Vector2(8, -8)
 shape = SubResource("RectangleShape2D_o4but")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -163,6 +159,6 @@ libraries = {
 }
 
 [node name="Movement" type="Node" parent="."]
-script = ExtResource("7_q4075")
+script = ExtResource("5_0vlyj")
 
-[node name="FurnitureCommon" parent="." instance=ExtResource("9_1aep5")]
+[node name="FurnitureCommon" parent="." instance=ExtResource("6_qnbbo")]
