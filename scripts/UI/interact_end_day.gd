@@ -72,6 +72,7 @@ func _endDayInteract():
 	$EndDay.visible_characters = 0
 	$Yes.show()
 	$No.show()
+	$Selected.show()
 	$EndDay.show()	
 	self.show()
 	
