@@ -385,6 +385,8 @@ size = Vector2(15, 15)
 
 [node name="Furniture2x1" type="StaticBody2D" groups=["furniture"]]
 script = ExtResource("1_1topl")
+fancy_name = "Ugly Sofa"
+description = "A basic sofa, not tasty at all."
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = ExtResource("2_eh8sk")

@@ -1,18 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://b2h2sc3a2lyfp"]
+[gd_scene load_steps=15 format=3 uid="uid://bwd7m6dc5bfx4"]
 
-[ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_hd7uj"]
-[ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_ithn6"]
-[ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="3_pf8k6"]
-[ext_resource type="Texture2D" uid="uid://c60yivmahoqqm" path="res://assets/textures/Furniture/Floor Lamp/floor_lamp_left.png" id="4_2wwh0"]
-[ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="5_1fap6"]
-[ext_resource type="Texture2D" uid="uid://cypmddpcxjth4" path="res://assets/textures/Furniture/Floor Lamp/floor_lamp_right.png" id="5_ynoyu"]
-[ext_resource type="PackedScene" path="res://scenes/objects/FurnitureCommon.tscn" id="6_ahm74"]
+[ext_resource type="Script" path="res://scripts/objects/Furniture.gd" id="1_qey62"]
+[ext_resource type="Material" path="res://assets/shaders/Furniture.tres" id="2_2lyrd"]
+[ext_resource type="Texture2D" uid="uid://buhinynffa5x5" path="res://assets/textures/jam_logo.png" id="3_kbicg"]
+[ext_resource type="Texture2D" uid="uid://dcph706nmnmqb" path="res://assets/textures/Furniture/Bedside Table/BedsideTable.png" id="4_jyq01"]
+[ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="5_di0e5"]
+[ext_resource type="PackedScene" path="res://scenes/objects/FurnitureCommon.tscn" id="6_lknrq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nb45i"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_pf8k6")
+"texture": ExtResource("3_kbicg")
 }],
 "loop": true,
 "name": &"active",
@@ -20,7 +19,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_2wwh0")
+"texture": ExtResource("4_jyq01")
 }],
 "loop": true,
 "name": &"back",
@@ -28,7 +27,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_2wwh0")
+"texture": ExtResource("4_jyq01")
 }],
 "loop": true,
 "name": &"front",
@@ -36,7 +35,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_ynoyu")
+"texture": ExtResource("4_jyq01")
 }],
 "loop": true,
 "name": &"left",
@@ -44,7 +43,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_ynoyu")
+"texture": ExtResource("4_jyq01")
 }],
 "loop": true,
 "name": &"right",
@@ -138,14 +137,14 @@ _data = {
 "right": SubResource("Animation_oml8v")
 }
 
-[node name="Furniture1x1" type="StaticBody2D" groups=["any_item", "furniture"]]
-script = ExtResource("1_hd7uj")
-fancy_name = "Floor Lamp"
-description = "Makes reading easier."
+[node name="Furniture1x1" type="StaticBody2D" groups=["furniture"]]
+script = ExtResource("1_qey62")
+fancy_name = "Bedside table"
+description = "You can put your smartphone here! Wait, what's a smartphone?"
+weight = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-material = ExtResource("2_ithn6")
-position = Vector2(0, -8)
+material = ExtResource("2_2lyrd")
 sprite_frames = SubResource("SpriteFrames_nb45i")
 animation = &"front"
 
@@ -158,6 +157,6 @@ libraries = {
 }
 
 [node name="Movement" type="Node" parent="."]
-script = ExtResource("5_1fap6")
+script = ExtResource("5_di0e5")
 
-[node name="FurnitureCommon" parent="." instance=ExtResource("6_ahm74")]
+[node name="FurnitureCommon" parent="." instance=ExtResource("6_lknrq")]
