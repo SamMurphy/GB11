@@ -35,7 +35,6 @@ func _input(ev):
 		endDay = false
 		select.set_position(Vector2(58, 26))
 	if Input.is_action_just_pressed("A") && is_visible():
-		can_end_day = false
 		if (can_end_day):
 			choice.emit(endDay)
 			hideAll()
