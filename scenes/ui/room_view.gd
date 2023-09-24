@@ -18,9 +18,9 @@ func _process(delta):
 		count_enabled = !count_enabled
 	if count_enabled:
 		$Count.show()
-		self.size = Vector2(80,40)
+		self.size = Vector2(80,30)
 	else:
-		self.size = Vector2(80,20)
+		self.size = Vector2(80,15)
 		$Count.hide()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
@@ -29,7 +29,7 @@ func _update_player_location(pos: String):
 
 func _update_player_score(score: int, total: int):
 	if total == 0:
-		$Count.bbcode_text = "No required"
+		$Count.bbcode_text = "[center]" + "No required"
 	else:
-		$Count.bbcode_text = str(score) + " of " + str(total)
+		$Count.bbcode_text = "[center]" + str(score) + " of " + str(total)
 	
