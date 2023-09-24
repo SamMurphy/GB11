@@ -10,7 +10,7 @@
 position = Vector2(37, -54)
 
 [node name="Furniture1x2" parent="." instance=ExtResource("2_ln4g6")]
-position = Vector2(71, -25)
+position = Vector2(69, -75)
 
 [node name="Furniture2x3" parent="." instance=ExtResource("1_w6ecr")]
 position = Vector2(91, -107)
