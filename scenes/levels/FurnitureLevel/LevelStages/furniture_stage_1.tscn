@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b80f0p5bya0v0"]
 
-[ext_resource type="PackedScene" uid="uid://bc7qqtobp4uo3" path="res://scenes/objects/furniture/Bed.tscn" id="1_tb7cn"]
-[ext_resource type="PackedScene" uid="uid://bk4gpts8icg8h" path="res://scenes/objects/furniture/FloorLamp.tscn" id="2_3opv4"]
+[ext_resource type="PackedScene" uid="uid://svotf0k5i03i" path="res://scenes/objects/furniture/Bed.tscn" id="1_tb7cn"]
+[ext_resource type="PackedScene" uid="uid://b2h2sc3a2lyfp" path="res://scenes/objects/furniture/FloorLamp.tscn" id="2_3opv4"]
 [ext_resource type="PackedScene" uid="uid://dxmalodca3xtp" path="res://scenes/objects/furniture/sofa_rubbish.tscn" id="3_vkufo"]
 
 [node name="furniture_stage_0" type="Node2D"]

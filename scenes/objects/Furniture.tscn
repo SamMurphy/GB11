@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bhbc5fpfrlho3" path="res://assets/textures/REPLACE_ME/Furniture/sofa/left.png" id="5_1iute"]
 [ext_resource type="Texture2D" uid="uid://dpxppnlcdajwf" path="res://assets/textures/REPLACE_ME/Furniture/sofa/right.png" id="6_v6av4"]
 [ext_resource type="Script" path="res://scripts/movement/directional_movement.gd" id="7_rn1pj"]
-[ext_resource type="PackedScene" uid="uid://bkkyab6rbqee3" path="res://scenes/objects/FurnitureCommon.tscn" id="10_yjanm"]
+[ext_resource type="PackedScene" path="res://scenes/objects/FurnitureCommon.tscn" id="10_yjanm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nb45i"]
 animations = [{

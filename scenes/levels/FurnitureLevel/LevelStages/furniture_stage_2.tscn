@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://drs25fjsg8pk8"]
 
-[ext_resource type="PackedScene" uid="uid://cs78vtpprabga" path="res://scenes/objects/furniture/dining_chair.tscn" id="1_eh5j7"]
-[ext_resource type="PackedScene" uid="uid://dbnl0ep7dd5ga" path="res://scenes/objects/furniture/dining_table.tscn" id="2_08xan"]
+[ext_resource type="PackedScene" uid="uid://w61o2xj6nfjl" path="res://scenes/objects/furniture/dining_chair.tscn" id="1_eh5j7"]
+[ext_resource type="PackedScene" uid="uid://4xscfjeqhf04" path="res://scenes/objects/furniture/dining_table.tscn" id="2_08xan"]
 
 [node name="furniture_stage_0" type="Node2D"]
 
