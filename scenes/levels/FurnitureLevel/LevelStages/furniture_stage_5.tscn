@@ -1,17 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmcnmrpn41fdn"]
 
 [ext_resource type="PackedScene" uid="uid://cr1jscdnfvdeb" path="res://scenes/objects/furniture/moving_box.tscn" id="1_014qa"]
-[ext_resource type="PackedScene" uid="uid://c142aqxppl5if" path="res://scenes/objects/furniture/armchair.tscn" id="2_y5mhb"]
-[ext_resource type="PackedScene" uid="uid://cthnuomohe117" path="res://scenes/objects/furniture/cat_tower_fancy.tscn" id="3_xsx62"]
+[ext_resource type="PackedScene" path="res://scenes/objects/furniture/armchair.tscn" id="2_y5mhb"]
+[ext_resource type="PackedScene" path="res://scenes/objects/furniture/cat_tower_fancy.tscn" id="3_xsx62"]
 
 [node name="furniture_stage_5" type="Node2D"]
 y_sort_enabled = true
+position = Vector2(224, 32)
 
 [node name="Furniture1x1" parent="." instance=ExtResource("1_014qa")]
-position = Vector2(31, -119)
+position = Vector2(64, -160)
 
 [node name="Furniture1x2" parent="." instance=ExtResource("1_014qa")]
-position = Vector2(72, -112)
+position = Vector2(32, -144)
 
 [node name="Furniture1x3" parent="." instance=ExtResource("2_y5mhb")]
 position = Vector2(61, -139)

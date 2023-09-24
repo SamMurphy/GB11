@@ -1,13 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://pdc2wn8cjgm"]
 
-[ext_resource type="PackedScene" uid="uid://d801n3fe8nyp" path="res://scenes/objects/furniture/cat_tower.tscn" id="1_evsn8"]
-[ext_resource type="PackedScene" uid="uid://ojaqhde2ty8o" path="res://scenes/objects/furniture/dog_bed.tscn" id="2_10vnd"]
+[ext_resource type="PackedScene" uid="uid://bh0wvtr0luk1d" path="res://scenes/objects/furniture/cat_tower.tscn" id="1_evsn8"]
+[ext_resource type="PackedScene" uid="uid://d1yt6yms5jss0" path="res://scenes/objects/furniture/dog_bed.tscn" id="2_10vnd"]
 
 [node name="furniture_stage_4" type="Node2D"]
 y_sort_enabled = true
+position = Vector2(240, -32)
 
 [node name="Furniture1x1" parent="." instance=ExtResource("1_evsn8")]
-position = Vector2(22, -54)
+position = Vector2(16, -64)
 
 [node name="Furniture2x1" parent="." instance=ExtResource("2_10vnd")]
-position = Vector2(72, -53)
+position = Vector2(72, -64)
